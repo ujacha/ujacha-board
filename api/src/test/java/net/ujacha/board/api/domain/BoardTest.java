@@ -21,9 +21,7 @@ class BoardTest {
     public void Board_생성() {
         // Given
         final String title = "테스트 보드";
-        Board board = Board.builder()
-                .title(title)
-                .build();
+        Board board = new Board(title);
 
         // When
         em.persist(board);

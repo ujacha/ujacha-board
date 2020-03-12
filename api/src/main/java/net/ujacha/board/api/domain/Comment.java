@@ -1,20 +1,21 @@
 package net.ujacha.board.api.domain;
 
-import lombok.*;
-import lombok.experimental.SuperBuilder;
+import lombok.AccessLevel;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-import static javax.persistence.FetchType.*;
+import static javax.persistence.FetchType.LAZY;
 
 @Entity
-@SuperBuilder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor(access = AccessLevel.PROTECTED)
 @EqualsAndHashCode(of = "id", callSuper = false)
 @Getter
-public class Comment extends CommonEntity{
-    @Id @GeneratedValue
+public class Comment extends CommonEntity {
+    @Id
+    @GeneratedValue
     @Column(name = "comment_id")
     private Long id;
     private String text;
@@ -27,7 +28,17 @@ public class Comment extends CommonEntity{
     @JoinColumn(name = "writer_id")
     private Member writer;
 
+    public Comment(Member writer, String text) {
+        CommonEntity.initEntity(this);
+        this.writer = writer;
+        this.text = text;
+    }
+
     public void updateText(String text) {
         this.text = text;
+    }
+
+    public void addTo(Article article) {
+        this.article = article;
     }
 }

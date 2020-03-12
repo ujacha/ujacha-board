@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c16d268e-bad0-4400-b5ff-4c6784a4b8d9" name="Default Changelist" comment="" />
+    <list default="true" id="c16d268e-bad0-4400-b5ff-4c6784a4b8d9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/domain/CommentTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/domain/TestHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/CommonEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/CommonEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/domain/ArticleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/domain/ArticleTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/domain/BoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/domain/BoardTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,11 +26,14 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -30,6 +46,7 @@
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1YzsAKNvZ2B4GcATUDp3EkOdeHJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="flattenPackages" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -42,6 +59,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="jdk.selected.JAVA_MODULE" value="11" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -98,6 +116,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CommentTest.Comment_저장" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="net.ujacha.board.api.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="net.ujacha.board.api.domain" />
+      <option name="MAIN_CLASS_NAME" value="net.ujacha.board.api.domain.CommentTest" />
+      <option name="METHOD_NAME" value="Comment_저장" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UjachaBoardApiApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="api" />
       <extension name="coverage">
@@ -124,6 +158,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.ArticleTest.Article_저장" />
+        <item itemvalue="JUnit.CommentTest.Comment_저장" />
         <item itemvalue="JUnit.BoardTest.Board_생성" />
         <item itemvalue="JUnit.UjachaBoardApiApplicationTests.contextLoads" />
       </list>
@@ -140,6 +175,8 @@
       <option name="presentableId" value="Default" />
       <updated>1583956612839</updated>
       <workItem from="1583956617023" duration="9134000" />
+      <workItem from="1584005085213" duration="491000" />
+      <workItem from="1584024117502" duration="2902000" />
     </task>
     <servers />
   </component>
@@ -151,41 +188,56 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#Project_Structure/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583956775937" />
-    <state width="1877" height="653" key="GridCell.Tab.0.bottom" timestamp="1583967497417">
+    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1584026305483">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="653" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583967497417" />
+    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1584026305483" />
+    <state width="1877" height="882" key="GridCell.Tab.0.bottom" timestamp="1584026793488">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="882" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584026793488" />
     <state width="1877" height="653" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583966710540" />
-    <state width="1877" height="653" key="GridCell.Tab.0.center" timestamp="1583967497417">
+    <state width="1877" height="882" key="GridCell.Tab.0.center" timestamp="1584026793488">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="653" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583967497417" />
+    <state width="1877" height="882" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584026793488" />
     <state width="1877" height="653" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583966710540" />
-    <state width="1877" height="653" key="GridCell.Tab.0.left" timestamp="1583967497417">
+    <state width="1877" height="882" key="GridCell.Tab.0.left" timestamp="1584026793488">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="653" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583967497417" />
+    <state width="1877" height="882" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584026793488" />
     <state width="1877" height="653" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583966710540" />
-    <state width="1877" height="653" key="GridCell.Tab.0.right" timestamp="1583967497417">
+    <state width="1877" height="882" key="GridCell.Tab.0.right" timestamp="1584026793488">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="653" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583967497417" />
+    <state width="1877" height="882" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584026793488" />
     <state width="1877" height="653" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583966710540" />
-    <state x="731" y="238" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1583963580934">
+    <state x="657" y="209" width="606" height="618" key="RefactorJ.ExtractClass" timestamp="1584024947997">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="657" y="209" width="606" height="618" key="RefactorJ.ExtractClass/0.0.1920.1040@0.0.1920.1040" timestamp="1584024947997" />
+    <state x="731" y="238" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1584024533378">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="731" y="238" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584024533378" />
     <state x="731" y="238" key="com.intellij.testIntegration.createTest.CreateTestDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583963580934" />
-    <state x="339" y="243" width="1242" height="565" key="new project wizard" timestamp="1583956764626">
+    <state x="690" y="273" key="extract.method.dialog" timestamp="1584024810054">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="690" y="273" key="extract.method.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584024810054" />
+    <state x="339" y="243" width="1242" height="565" key="new project wizard" timestamp="1584005576587">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="339" y="243" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1584005576587" />
     <state x="339" y="243" width="1242" height="565" key="new project wizard/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583956764626" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1583958287414">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583958287414" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1583963678546">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1584025578635">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584025578635" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583963678546" />
   </component>
 </project>

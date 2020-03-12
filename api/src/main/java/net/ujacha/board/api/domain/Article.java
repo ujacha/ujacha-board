@@ -1,7 +1,9 @@
 package net.ujacha.board.api.domain;
 
-import lombok.*;
-import lombok.experimental.SuperBuilder;
+import lombok.AccessLevel;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -9,12 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@SuperBuilder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor(access = AccessLevel.PROTECTED)
 @EqualsAndHashCode(of = "id", callSuper = false)
 @Getter
-public class Article extends CommonEntity{
+public class Article extends CommonEntity {
     @Id
     @GeneratedValue
     @Column(name = "article_id")
@@ -35,20 +35,17 @@ public class Article extends CommonEntity{
     @JoinColumn(name = "category_id")
     private Category category;
 
-    @OneToMany
+    @OneToMany(mappedBy = "article")
     private List<Comment> comments = new ArrayList<>();
 
-    public static  Article createArticle(Board board, Member writer, String title, String text, Category category){
+    public Article(Board board, Member writer, String title, String text, Category category) {
+        CommonEntity.initEntity(this);
+        this.board = board;
+        this.writer = writer;
+        this.title = title;
+        this.text = text;
+        this.category = category;
 
-        return Article.builder()
-                .board(board)
-                .writer(writer)
-                .title(title)
-                .text(text)
-                .createdAt(LocalDateTime.now())
-                .lastModifiedAt(LocalDateTime.now())
-                .category(category)
-                .build();
     }
 
     public void updateText(String text) {
@@ -56,4 +53,9 @@ public class Article extends CommonEntity{
         this.setLastModifiedAt(LocalDateTime.now());
     }
 
+    public Comment addComment(Comment comment) {
+        comment.addTo(this);
+        comments.add(comment);
+        return comment;
+    }
 }
