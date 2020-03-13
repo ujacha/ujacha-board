@@ -1,4 +1,4 @@
-package net.ujacha.board.api.domain;
+package net.ujacha.board.api.entity;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,7 +19,7 @@ class CommentTest {
     @Rollback(false)
     public void Comment_저장() {
         // Given
-        Board board = new Board("Board1");
+        Board board = Board.builder().title("Board1").displayOrder(0).build();
         em.persist(board);
 
         Member userA = new Member("UserA");
@@ -27,7 +27,7 @@ class CommentTest {
         em.persist(userA);
         em.persist(userB);
 
-        Category category = new Category("Category1");
+        Category category = Category.builder().name("Category1").build();
         em.persist(category);
 
         Article article = TestHelper.createArticle(board, userA, category, "title", "text");

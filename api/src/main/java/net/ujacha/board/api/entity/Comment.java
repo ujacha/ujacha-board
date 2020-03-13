@@ -1,4 +1,4 @@
-package net.ujacha.board.api.domain;
+package net.ujacha.board.api.entity;
 
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;

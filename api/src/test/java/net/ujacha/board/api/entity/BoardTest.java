@@ -1,4 +1,4 @@
-package net.ujacha.board.api.domain;
+package net.ujacha.board.api.entity;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ class BoardTest {
     public void Board_생성() {
         // Given
         final String title = "테스트 보드";
-        Board board = new Board(title);
+        Board board = Board.builder().title(title).displayOrder(0).build();
 
         // When
         em.persist(board);

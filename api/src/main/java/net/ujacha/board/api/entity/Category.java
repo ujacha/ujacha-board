@@ -1,14 +1,8 @@
-package net.ujacha.board.api.domain;
+package net.ujacha.board.api.entity;
 
-import lombok.AccessLevel;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -19,10 +13,18 @@ public class Category extends CommonEntity{
     @GeneratedValue
     @Column(name = "category_id")
     private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "board_id")
+    private Board board;
     private String name;
 
-    public Category(String name) {
+    @Builder
+    public Category(Board board, String name) {
         CommonEntity.initEntity(this);
+        this.board = board;
         this.name = name;
+
+        board.getCategories().add(this);
     }
 }

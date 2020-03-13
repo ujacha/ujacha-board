@@ -2,18 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c16d268e-bad0-4400-b5ff-4c6784a4b8d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/domain/CommentTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/domain/TestHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_thedeanda_lorem_2_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ognl_ognl_3_1_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_attoparser_attoparser_2_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jsoup_jsoup_1_13_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_modelmapper_modelmapper_2_3_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_2_2_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_java8time_3_0_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_11_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring5_3_0_11_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_unbescape_unbescape_1_1_6_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/ApplicationConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/common/DateUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/controller/IndexController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/exception/ResourceNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/repository/ArticleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/repository/BoardRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/repository/CategoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/repository/MemberRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/service/InitDbService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/resources/static/css/site.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/resources/static/error/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/resources/static/error/5xx.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/resources/templates/article.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/common/DateUtilTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/Article.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/CommonEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/CommonEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/domain/ArticleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/domain/ArticleTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/domain/BoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/domain/BoardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/entity/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/entity/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/entity/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/entity/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/CommonEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/entity/CommonEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/entity/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/MemberRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/entity/MemberRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/domain/ArticleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/entity/ArticleTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/domain/BoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/entity/BoardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/domain/CommentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/entity/CommentTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/domain/TestHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/entity/TestHelper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +56,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
         <option value="JUnit5 Test Class" />
       </list>
@@ -48,19 +78,24 @@
   <component name="ProjectId" id="1YzsAKNvZ2B4GcATUDp3EkOdeHJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
-    <option name="flattenPackages" value="true" />
-    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="jdk.selected.JAVA_MODULE" value="11" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/api/src/main/resources/templates" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -74,75 +109,99 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="net.ujacha.board.api.common" />
       <recent name="net.ujacha.board.api.domain" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="net.ujacha.board.api.common" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\ujacha-board\api\src\main\resources\templates" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="net.ujacha.board.api.exception" />
+      <recent name="net.ujacha.board.api.repository" />
       <recent name="net.ujacha.board.api.domain" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ArticleTest.Article_저장">
-    <configuration name="ArticleTest.Article_저장" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.DateUtilTest.test_ago_en">
+    <configuration name="DateUtilTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="api" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="net.ujacha.board.api.domain.*" />
+          <option name="PATTERN" value="net.ujacha.board.api.common.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="net.ujacha.board.api.domain" />
-      <option name="MAIN_CLASS_NAME" value="net.ujacha.board.api.domain.ArticleTest" />
-      <option name="METHOD_NAME" value="Article_저장" />
+      <option name="PACKAGE_NAME" value="net.ujacha.board.api.common" />
+      <option name="MAIN_CLASS_NAME" value="net.ujacha.board.api.common.DateUtilTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DateUtilTest.test_분전" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="net.ujacha.board.api.common.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="net.ujacha.board.api.common" />
+      <option name="MAIN_CLASS_NAME" value="net.ujacha.board.api.common.DateUtilTest" />
+      <option name="METHOD_NAME" value="test_분전" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BoardTest.Board_생성" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DateUtilTest.test_ago_en" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="api" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="net.ujacha.board.api.domain.*" />
+          <option name="PATTERN" value="net.ujacha.board.api.common.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="net.ujacha.board.api.domain" />
-      <option name="MAIN_CLASS_NAME" value="net.ujacha.board.api.domain.BoardTest" />
-      <option name="METHOD_NAME" value="Board_생성" />
+      <option name="PACKAGE_NAME" value="net.ujacha.board.api.common" />
+      <option name="MAIN_CLASS_NAME" value="net.ujacha.board.api.common.DateUtilTest" />
+      <option name="METHOD_NAME" value="test_ago_en" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CommentTest.Comment_저장" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DateUtilTest.test_ago_ko" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="api" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="net.ujacha.board.api.domain.*" />
+          <option name="PATTERN" value="net.ujacha.board.api.common.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="net.ujacha.board.api.domain" />
-      <option name="MAIN_CLASS_NAME" value="net.ujacha.board.api.domain.CommentTest" />
-      <option name="METHOD_NAME" value="Comment_저장" />
+      <option name="PACKAGE_NAME" value="net.ujacha.board.api.common" />
+      <option name="MAIN_CLASS_NAME" value="net.ujacha.board.api.common.DateUtilTest" />
+      <option name="METHOD_NAME" value="test_ago_ko" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UjachaBoardApiApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DateUtilTest.test_ago_short" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="api" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="net.ujacha.board.api.*" />
+          <option name="PATTERN" value="net.ujacha.board.api.common.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="net.ujacha.board.api" />
-      <option name="MAIN_CLASS_NAME" value="net.ujacha.board.api.UjachaBoardApiApplicationTests" />
-      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="PACKAGE_NAME" value="net.ujacha.board.api.common" />
+      <option name="MAIN_CLASS_NAME" value="net.ujacha.board.api.common.DateUtilTest" />
+      <option name="METHOD_NAME" value="test_ago_short" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -157,10 +216,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ArticleTest.Article_저장" />
-        <item itemvalue="JUnit.CommentTest.Comment_저장" />
-        <item itemvalue="JUnit.BoardTest.Board_생성" />
-        <item itemvalue="JUnit.UjachaBoardApiApplicationTests.contextLoads" />
+        <item itemvalue="JUnit.DateUtilTest.test_ago_en" />
+        <item itemvalue="JUnit.DateUtilTest" />
+        <item itemvalue="JUnit.DateUtilTest.test_ago_short" />
+        <item itemvalue="JUnit.DateUtilTest.test_ago_ko" />
+        <item itemvalue="JUnit.DateUtilTest.test_분전" />
       </list>
     </recent_temporary>
   </component>
@@ -176,7 +236,9 @@
       <updated>1583956612839</updated>
       <workItem from="1583956617023" duration="9134000" />
       <workItem from="1584005085213" duration="491000" />
-      <workItem from="1584024117502" duration="2902000" />
+      <workItem from="1584024117502" duration="3711000" />
+      <workItem from="1584030949920" duration="19000" />
+      <workItem from="1584084418716" duration="23171000" />
     </task>
     <servers />
   </component>
@@ -188,43 +250,83 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#Project_Structure/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583956775937" />
-    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1584026305483">
+    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1584104125877">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1584026305483" />
-    <state width="1877" height="882" key="GridCell.Tab.0.bottom" timestamp="1584026793488">
+    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1584104125877" />
+    <state x="751" y="378" width="417" height="292" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1584107699316">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="882" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584026793488" />
+    <state x="751" y="378" width="417" height="292" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1584107699316" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1584030958940">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584030958940" />
+    <state width="1877" height="248" key="GridCell.Tab.0.bottom" timestamp="1584113548253">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="248" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584113548253" />
     <state width="1877" height="653" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583966710540" />
-    <state width="1877" height="882" key="GridCell.Tab.0.center" timestamp="1584026793488">
+    <state width="1877" height="248" key="GridCell.Tab.0.center" timestamp="1584113548253">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="882" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584026793488" />
+    <state width="1877" height="248" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584113548253" />
     <state width="1877" height="653" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583966710540" />
-    <state width="1877" height="882" key="GridCell.Tab.0.left" timestamp="1584026793488">
+    <state width="1877" height="248" key="GridCell.Tab.0.left" timestamp="1584113548253">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="882" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584026793488" />
+    <state width="1877" height="248" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584113548253" />
     <state width="1877" height="653" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583966710540" />
-    <state width="1877" height="882" key="GridCell.Tab.0.right" timestamp="1584026793488">
+    <state width="1877" height="248" key="GridCell.Tab.0.right" timestamp="1584113548253">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="882" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584026793488" />
+    <state width="1877" height="248" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584113548253" />
     <state width="1877" height="653" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583966710540" />
+    <state width="1877" height="248" key="GridCell.Tab.1.bottom" timestamp="1584108064704">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="248" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584108064704" />
+    <state width="1877" height="248" key="GridCell.Tab.1.center" timestamp="1584108064704">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="248" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584108064704" />
+    <state width="1877" height="248" key="GridCell.Tab.1.left" timestamp="1584108064704">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="248" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584108064704" />
+    <state width="1877" height="248" key="GridCell.Tab.1.right" timestamp="1584108064704">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="248" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584108064704" />
     <state x="657" y="209" width="606" height="618" key="RefactorJ.ExtractClass" timestamp="1584024947997">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="657" y="209" width="606" height="618" key="RefactorJ.ExtractClass/0.0.1920.1040@0.0.1920.1040" timestamp="1584024947997" />
-    <state x="731" y="238" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1584024533378">
+    <state x="775" y="454" key="ReplaceDuplicatesPrompt" timestamp="1584112199122">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="731" y="238" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584024533378" />
+    <state x="775" y="454" key="ReplaceDuplicatesPrompt/0.0.1920.1040@0.0.1920.1040" timestamp="1584112199122" />
+    <state width="498" height="508" key="SwitcherDM" timestamp="1584091909460">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="498" height="508" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1584091909460" />
+    <state x="753" y="302" key="chooseDestDirectoryDialog" timestamp="1584107699261">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="753" y="302" key="chooseDestDirectoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584107699261" />
+    <state x="764" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584087991896">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="764" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584087991896" />
+    <state x="731" y="238" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1584107705123">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="731" y="238" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584107705123" />
     <state x="731" y="238" key="com.intellij.testIntegration.createTest.CreateTestDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583963580934" />
-    <state x="690" y="273" key="extract.method.dialog" timestamp="1584024810054">
+    <state x="690" y="273" width="540" height="501" key="extract.method.dialog" timestamp="1584112389948">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="273" key="extract.method.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584024810054" />
+    <state x="690" y="273" width="540" height="501" key="extract.method.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584112389948" />
     <state x="339" y="243" width="1242" height="565" key="new project wizard" timestamp="1584005576587">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -234,10 +336,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583958287414" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1584025578635">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1584102114212">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584025578635" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584102114212" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583963678546" />
   </component>
 </project>

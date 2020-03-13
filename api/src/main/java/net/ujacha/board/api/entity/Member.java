@@ -1,9 +1,6 @@
-package net.ujacha.board.api.domain;
+package net.ujacha.board.api.entity;
 
-import lombok.AccessLevel;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -24,6 +21,7 @@ public class Member extends CommonEntity{
         this(name, MemberRole.USER);
     }
 
+    @Builder
     public Member(String name, MemberRole memberRole) {
         CommonEntity.initEntity(this);
         this.name = name;

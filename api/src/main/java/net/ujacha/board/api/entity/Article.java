@@ -1,4 +1,4 @@
-package net.ujacha.board.api.domain;
+package net.ujacha.board.api.entity;
 
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
@@ -25,6 +25,8 @@ public class Article extends CommonEntity {
     private Board board;
 
     private String title;
+
+    @Lob
     private String text;
 
     @ManyToOne(fetch = FetchType.LAZY)
