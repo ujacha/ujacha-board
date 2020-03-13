@@ -1,22 +1,6 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title th:text="${article.board.title}"></title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-            crossorigin="anonymous"></script>
+<head th:replace="~{fragments/head :: head}">
 </head>
 <body>
 <div class="container">
@@ -35,7 +19,8 @@
 
     <div class="nav-scroller py-1 mb-2">
         <nav class="nav d-flex justify-content-between">
-            <a class="p-2 text-muted" href="#" th:each="category : ${article.board.categories}" th:text="${category.name}">Category
+            <a class="p-2 text-muted" href="#" th:each="category : ${article.board.categories}"
+               th:text="${category.name}">Category
                 Name</a>
         </nav>
     </div>
@@ -46,14 +31,15 @@
 
     <div class="blog-post">
         <h2 class="blog-post-title" th:text="${article.title}">Sample blog post</h2>
-        <p class="blog-post-meta"><span th:text="${#temporals.format(article.createdAt, 'MMMM d, yyyy')}">January 1, 2014</span> by <a href="#" th:text="${article.writer.name}">Mark</a></p>
+        <p class="blog-post-meta"><span th:text="${#temporals.format(article.createdAt, 'MMMM d, yyyy')}">January 1, 2014</span>
+            by <a href="#" th:text="${article.writer.name}">Mark</a></p>
         <div th:utext="${article.text}"></div>
 
     </div><!-- /.blog-post -->
 
 </main>
 
-<footer class="blog-footer">
+<footer th:replace="~{fragments/footer :: footer}" class="blog-footer">
     <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.
     </p>
     <p>

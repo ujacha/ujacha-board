@@ -2,47 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c16d268e-bad0-4400-b5ff-4c6784a4b8d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_thedeanda_lorem_2_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ognl_ognl_3_1_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_attoparser_attoparser_2_0_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jsoup_jsoup_1_13_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_modelmapper_modelmapper_2_3_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_2_2_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_java8time_3_0_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_11_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring5_3_0_11_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_unbescape_unbescape_1_1_6_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/ApplicationConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/common/DateUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/controller/IndexController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/exception/ResourceNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/repository/ArticleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/repository/BoardRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/repository/CategoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/repository/MemberRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/service/InitDbService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/resources/static/css/site.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/resources/static/error/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/resources/static/error/5xx.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/resources/templates/article.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/resources/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/common/DateUtilTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/resources/templates/fragments/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/resources/templates/fragments/head.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/entity/Article.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/entity/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/entity/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/entity/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/CommonEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/entity/CommonEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/entity/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/domain/MemberRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/entity/MemberRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/domain/ArticleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/entity/ArticleTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/domain/BoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/entity/BoardTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/domain/CommentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/entity/CommentTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/domain/TestHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/entity/TestHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/common/DateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/common/DateUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/resources/templates/article.html" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/templates/article.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +92,7 @@
       <recent name="net.ujacha.board.api.domain" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DateUtilTest.test_ago_en">
+  <component name="RunManager" selected="Spring Boot.UjachaBoardApiApplication">
     <configuration name="DateUtilTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="api" />
       <extension name="coverage">
@@ -238,7 +203,8 @@
       <workItem from="1584005085213" duration="491000" />
       <workItem from="1584024117502" duration="3711000" />
       <workItem from="1584030949920" duration="19000" />
-      <workItem from="1584084418716" duration="23171000" />
+      <workItem from="1584084418716" duration="23292000" />
+      <workItem from="1584134478586" duration="2516000" />
     </task>
     <servers />
   </component>
@@ -262,42 +228,42 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584030958940" />
-    <state width="1877" height="248" key="GridCell.Tab.0.bottom" timestamp="1584113548253">
+    <state width="1877" height="248" key="GridCell.Tab.0.bottom" timestamp="1584137461997">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="248" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584113548253" />
+    <state width="1877" height="248" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584137461997" />
     <state width="1877" height="653" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583966710540" />
-    <state width="1877" height="248" key="GridCell.Tab.0.center" timestamp="1584113548253">
+    <state width="1877" height="248" key="GridCell.Tab.0.center" timestamp="1584137461996">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="248" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584113548253" />
+    <state width="1877" height="248" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584137461996" />
     <state width="1877" height="653" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583966710540" />
-    <state width="1877" height="248" key="GridCell.Tab.0.left" timestamp="1584113548253">
+    <state width="1877" height="248" key="GridCell.Tab.0.left" timestamp="1584137461996">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="248" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584113548253" />
+    <state width="1877" height="248" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584137461996" />
     <state width="1877" height="653" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583966710540" />
-    <state width="1877" height="248" key="GridCell.Tab.0.right" timestamp="1584113548253">
+    <state width="1877" height="248" key="GridCell.Tab.0.right" timestamp="1584137461997">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="248" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584113548253" />
+    <state width="1877" height="248" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584137461997" />
     <state width="1877" height="653" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583966710540" />
-    <state width="1877" height="248" key="GridCell.Tab.1.bottom" timestamp="1584108064704">
+    <state width="1877" height="248" key="GridCell.Tab.1.bottom" timestamp="1584137461997">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="248" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584108064704" />
-    <state width="1877" height="248" key="GridCell.Tab.1.center" timestamp="1584108064704">
+    <state width="1877" height="248" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584137461997" />
+    <state width="1877" height="248" key="GridCell.Tab.1.center" timestamp="1584137461997">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="248" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584108064704" />
-    <state width="1877" height="248" key="GridCell.Tab.1.left" timestamp="1584108064704">
+    <state width="1877" height="248" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584137461997" />
+    <state width="1877" height="248" key="GridCell.Tab.1.left" timestamp="1584137461997">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="248" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584108064704" />
-    <state width="1877" height="248" key="GridCell.Tab.1.right" timestamp="1584108064704">
+    <state width="1877" height="248" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584137461997" />
+    <state width="1877" height="248" key="GridCell.Tab.1.right" timestamp="1584137461997">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="248" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584108064704" />
+    <state width="1877" height="248" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584137461997" />
     <state x="657" y="209" width="606" height="618" key="RefactorJ.ExtractClass" timestamp="1584024947997">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

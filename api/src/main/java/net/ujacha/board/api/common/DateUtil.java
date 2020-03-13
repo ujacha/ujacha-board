@@ -6,6 +6,15 @@ import java.util.Locale;
 
 public class DateUtil {
 
+    public static String ago(LocalDateTime before) {
+        return ago(before, LocalDateTime.now(), true);
+    }
+
+    public static String ago(LocalDateTime before, Locale locale) {
+        return ago(before, LocalDateTime.now(), locale, false);
+    }
+
+
     public static String ago(LocalDateTime before, LocalDateTime now, Locale locale) {
         return ago(before, now, locale, false);
     }
