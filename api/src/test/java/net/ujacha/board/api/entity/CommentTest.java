@@ -22,8 +22,8 @@ class CommentTest {
         Board board = Board.builder().title("Board1").displayOrder(0).build();
         em.persist(board);
 
-        Member userA = new Member("UserA");
-        Member userB = new Member("UserB");
+        Member userA = new Member("user1@example.com", "pass", "user1", MemberRole.USER);
+        Member userB = new Member("user2@example.com", "pass", "user2", MemberRole.USER);
         em.persist(userA);
         em.persist(userB);
 

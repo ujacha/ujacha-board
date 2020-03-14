@@ -21,7 +21,6 @@ public class Category extends CommonEntity{
 
     @Builder
     public Category(Board board, String name) {
-        CommonEntity.initEntity(this);
         this.board = board;
         this.name = name;
 

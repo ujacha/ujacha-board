@@ -29,7 +29,6 @@ public class Comment extends CommonEntity {
     private Member writer;
 
     public Comment(Member writer, String text) {
-        CommonEntity.initEntity(this);
         this.writer = writer;
         this.text = text;
     }

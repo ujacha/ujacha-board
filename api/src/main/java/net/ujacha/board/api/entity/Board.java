@@ -25,7 +25,6 @@ public class Board extends CommonEntity {
 
     @Builder
     public Board(String title, int displayOrder) {
-        CommonEntity.initEntity(this);
         this.title = title;
         this.displayOrder = displayOrder;
     }

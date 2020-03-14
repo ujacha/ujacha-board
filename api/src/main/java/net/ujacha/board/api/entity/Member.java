@@ -1,30 +1,38 @@
 package net.ujacha.board.api.entity;
 
 import lombok.*;
+import net.ujacha.board.api.common.PasswordUtils;
 
 import javax.persistence.*;
 
 @Entity
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-@EqualsAndHashCode(of = "id", callSuper = false)
 @Getter
+@EqualsAndHashCode(of = "id", callSuper = false)
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@ToString(of = {"id", "email", "password", "salt", "displayName", "memberRole"})
 public class Member extends CommonEntity{
     @Id @GeneratedValue
     @Column(name = "member_id")
     private Long id;
-    private String name;
+
+    @Column(unique = true)
+    private String email;
+
+    private String password;
+    private String salt;
+
+    private String displayName;
+
+
     @Enumerated(EnumType.STRING)
     private MemberRole memberRole;
 
-
-    public Member(String name) {
-        this(name, MemberRole.USER);
-    }
-
-    @Builder
-    public Member(String name, MemberRole memberRole) {
-        CommonEntity.initEntity(this);
-        this.name = name;
+    public Member(String email, String password, String displayName, MemberRole memberRole) {
+        this.email = email;
+        this.salt = PasswordUtils.getSalt(30);
+        this.password = PasswordUtils.generateSecurePassword(password, this.salt);
+        this.displayName = displayName;
         this.memberRole = memberRole;
     }
+
 }

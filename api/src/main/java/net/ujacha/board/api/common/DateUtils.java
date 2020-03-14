@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Locale;
 
-public class DateUtil {
+public class DateUtils {
 
     public static String ago(LocalDateTime before) {
         return ago(before, LocalDateTime.now(), true);

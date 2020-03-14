@@ -20,7 +20,7 @@ class ArticleTest {
     @Test
     public void Article_저장() {
         // Given
-        Member member = new Member("Devin");
+        Member member = new Member("email@example.com", "pass", "devin", MemberRole.USER);
 
         em.persist(member);
 

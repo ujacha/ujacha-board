@@ -33,7 +33,7 @@
                     <h3 class="mb-0" th:text="${#strings.abbreviate(article.title, 22)}" th:title="${article.title}">
                         Article Title</h3>
                     <div class="mb-1 text-muted"
-                         th:text="${T(net.ujacha.board.api.common.DateUtil).ago(article.createdAt, T(java.util.Locale).KOREAN)}">
+                         th:text="${T(net.ujacha.board.api.common.DateUtils).ago(article.createdAt, T(java.util.Locale).KOREAN)}">
                         Nov 12
                     </div>
                     <p class="card-text mb-auto"

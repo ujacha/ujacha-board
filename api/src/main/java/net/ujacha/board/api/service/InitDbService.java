@@ -51,7 +51,7 @@ public class InitDbService {
             categoryRepository.save(Category.builder().board(board).name(categoryName).build());
         }
 
-        Member member = Member.builder().name(lorem.getName()).memberRole(MemberRole.USER).build();
+        Member member = new Member(lorem.getEmail(),"pass1234",lorem.getName(), MemberRole.USER);
         memberRepository.save(member);
 
         for (int i = 0; i < 10; i++) {

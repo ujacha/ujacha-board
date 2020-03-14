@@ -41,13 +41,11 @@ public class Article extends CommonEntity {
     private List<Comment> comments = new ArrayList<>();
 
     public Article(Board board, Member writer, String title, String text, Category category) {
-        CommonEntity.initEntity(this);
         this.board = board;
         this.writer = writer;
         this.title = title;
         this.text = text;
         this.category = category;
-
     }
 
     public void updateText(String text) {
