@@ -2,12 +2,12 @@ package net.ujacha.board.api.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import net.ujacha.board.api.common.Const;
 import net.ujacha.board.api.dto.JoinForm;
 import net.ujacha.board.api.dto.LoginForm;
 import net.ujacha.board.api.entity.Member;
 import net.ujacha.board.api.entity.MemberRole;
 import net.ujacha.board.api.service.MemberService;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -34,10 +34,10 @@ public class MemberController {
     }
 
     @PostMapping("/join")
-    public String join(@ModelAttribute @Valid JoinForm form, Errors errors, Model model){
+    public String join(@ModelAttribute @Valid JoinForm form, Errors errors, Model model) {
         log.debug("JOIN : {}", form);
 
-        if(errors.hasErrors()){
+        if (errors.hasErrors()) {
             log.error("JOIN : {}", errors);
             throw new IllegalArgumentException();
         }
@@ -49,16 +49,49 @@ public class MemberController {
     }
 
     @GetMapping("/login")
-    public String loginForm(Model model){
+    public String loginForm(Model model) {
         LoginForm form = new LoginForm();
         model.addAttribute("form", form);
         return "login";
     }
 
     @PostMapping("/login")
-    public String login(@ModelAttribute @Valid LoginForm form, Errors errors, Model model, HttpSession httpSession){
+    public String login(@ModelAttribute @Valid LoginForm form, Errors errors, Model model, HttpSession httpSession) {
 
-        // TODO Sve Login Session
+        // Save Login Session
+
+        httpSession.removeAttribute(Const.UJACHA_BOARD_LOGIN);
+        httpSession.removeAttribute(Const.UJACHA_BOARD_ROLE);
+        httpSession.removeAttribute(Const.UJACHA_BOARD_NAME);
+
+        LoginForm newForm = new LoginForm();
+        newForm.setEmail(form.getEmail());
+        model.addAttribute("form", newForm);
+        if (errors.hasErrors()) {
+            throw new IllegalArgumentException();
+        }
+
+        final Long memberId = memberService.getMemberId(form.getEmail());
+
+        if (memberId == null) {
+            log.debug("Not Found Member By Email.");
+            errors.rejectValue("email", "notFoundMember", "Not Found Member By Email.");
+            return "login";
+        }
+
+        final boolean verifyPassword = memberService.verifyPassword(memberId, form.getPassword());
+
+        if (!verifyPassword) {
+            log.debug("Wrong Password.");
+            errors.rejectValue("password", "wrongPassword", "Wrong Password.");
+            return "login";
+        }
+
+        Member loginMember = memberService.findOne(memberId);
+
+        httpSession.setAttribute(Const.UJACHA_BOARD_LOGIN, loginMember.getId());
+        httpSession.setAttribute(Const.UJACHA_BOARD_ROLE, loginMember.getMemberRole());
+        httpSession.setAttribute(Const.UJACHA_BOARD_NAME, loginMember.getDisplayName());
 
         return "redirect:/";
     }

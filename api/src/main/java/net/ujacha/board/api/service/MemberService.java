@@ -19,7 +19,7 @@ public class MemberService {
     }
 
     public Long getMemberId(final String email) {
-        final Member findMember = memberRepository.findFirstByEmailAndDeletedAtIsNotNull(email);
+        final Member findMember = memberRepository.findFirstByEmailAndDeletedAtIsNull(email);
         if (findMember != null) {
             return findMember.getId();
         }
@@ -31,4 +31,7 @@ public class MemberService {
         return member.map(m -> PasswordUtils.verifyUserPassword(password, m.getPassword(), m.getSalt())).orElse(false);
     }
 
+    public Member findOne(Long memberId) {
+        return memberRepository.findById(memberId).get();
+    }
 }

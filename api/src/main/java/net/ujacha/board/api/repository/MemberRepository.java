@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface MemberRepository extends JpaRepository<Member, Long> {
 
-    Member findFirstByEmailAndDeletedAtIsNotNull(String email);
+    Member findFirstByEmailAndDeletedAtIsNull(String email);
 
 
 }
