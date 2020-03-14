@@ -18,6 +18,8 @@ public class Comment extends CommonEntity {
     @GeneratedValue
     @Column(name = "comment_id")
     private Long id;
+
+    @Lob
     private String text;
 
     @ManyToOne(fetch = LAZY)
