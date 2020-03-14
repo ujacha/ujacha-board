@@ -12,6 +12,10 @@ public class JoinForm {
     private String email;
     @NotEmpty
     private String password;
+
+    @NotEmpty
+    private String password2;
+
     @NotEmpty
     private String displayName;
 }

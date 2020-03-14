@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:replace="~{fragments/head :: head}">
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>UJACHA BOARD - NEWS</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+              integrity="sha256-9mbkOfVho3ZPXfM7W8sV2SndrGDuh7wuyLjtsWeTI1Q=" crossorigin="anonymous"/>
+        <!--        <link rel="stylesheet" th:href="@{/css/site.css}">-->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+                integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
+                integrity="sha256-t8GepnyPmw9t+foMh3mKNvcorqNHamSKtKRxxpUEgFI=" crossorigin="anonymous"></script>
+    </th:block>
+
+    <style>
+        .top-pd {
+            padding-top: 1.5em;
+        }
+    </style>
+
+</head>
+<body>
+<header class="ui container top-pd">
+    <div class="ui grid">
+        <div class="four wide column">
+
+        </div>
+        <div class="center aligned eight wide column">
+            <a class="ui huge header" href="#" th:text="${board.title}">Board Name</a>
+        </div>
+        <div class="right aligned four wide column">
+            <a class="ui primary basic compact button" href="login.html" th:href="@{/login}">Sign up</a>
+        </div>
+    </div>
+    <div class="ui divider"></div>
+    <div class="nav-scroller">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#" th:each="category : ${categories}" th:text="${category.name}">Category
+                Name</a>
+        </nav>
+    </div>
+    <div class="ui divider"></div>
+</header>
+
+<main role="main" class="ui container">
+
+    <div class="ui three stackable cards">
+        <!--/*@thymesVar id="article" type="net.ujacha.board.api.entity.Article"*/-->
+        <div class="ui fluid card" th:each="article : ${page.getContent()}">
+            <div class="content">
+
+                <div class="header">
+                    <a href="article.html" th:href="@{/article/{id}(id=${article.id})}"
+                       th:text="${#strings.abbreviate(article.title, 32)}"
+                       th:title="${article.title}">Article Title</a>
+                </div>
+                <div class="meta">
+                    <span class="right floated time"
+                          th:text="${T(net.ujacha.board.api.common.DateUtils).ago(article.createdAt, T(java.util.Locale).KOREAN)}">2 days ago</span>
+                    <span class="category" th:text="${article.category?.name}">Animals</span>
+                </div>
+                <div class="description">
+                    <p th:text="${#strings.abbreviate(T(org.jsoup.Jsoup).parse(article.text).text(),200)}">
+                        This is a wider card with supporting text below as a natural lead-in to additional content.
+                    </p>
+                </div>
+            </div>
+            <div class="extra content">
+                <div class="right floated author" th:text="${article.writer.displayName}">
+                    <!--                    <img class="ui avatar image" src="/images/avatar/small/matt.jpg"> -->
+                    Matt
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer th:replace="~{fragments/footer :: footer}" class="ui center aligned container">
+    <div class="ui divider"></div>
+    <p>
+        ujacha.net @ 2020
+    </p>
+    <p>
+        <a href="#">Back to top</a>
+    </p>
+</footer>
+<script>
+    $(function () {
+        console.log("INIT");
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
+</body>
+</html>

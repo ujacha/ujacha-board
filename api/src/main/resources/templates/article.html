@@ -1,46 +1,163 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{fragments/head :: head}">
+<head>
+    <th:block th:replace="~{fragments/head :: head}">
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>UJACHA BOARD - NEWS</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+              integrity="sha256-9mbkOfVho3ZPXfM7W8sV2SndrGDuh7wuyLjtsWeTI1Q=" crossorigin="anonymous"/>
+        <!--        <link rel="stylesheet" th:href="@{/css/site.css}">-->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+                integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
+                integrity="sha256-t8GepnyPmw9t+foMh3mKNvcorqNHamSKtKRxxpUEgFI=" crossorigin="anonymous"></script>
+    </th:block>
+
+    <style>
+        .top-pd {
+            padding-top: 1.5em;
+        }
+    </style>
+
 </head>
 <body>
-<div class="container">
-    <header class="blog-header py-3">
-        <div class="row flex-nowrap justify-content-between align-items-center">
-            <div class="col-4 pt-1">
-            </div>
-            <div class="col-4 text-center">
-                <a class="blog-header-logo text-dark" href="#" th:text="${article.board.title}">Title</a>
-            </div>
-            <div class="col-4 d-flex justify-content-end align-items-center">
-                <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
-            </div>
-        </div>
-    </header>
+<header class="ui container top-pd">
+    <div class="ui grid">
+        <div class="four wide column">
 
-    <div class="nav-scroller py-1 mb-2">
+        </div>
+        <div class="center aligned eight wide column">
+            <a class="ui huge header" href="#" th:text="${article.board.title}">Board Name</a>
+        </div>
+        <div class="right aligned four wide column">
+            <a class="ui primary basic compact button" href="login.html" th:href="@{/login}">Sign up</a>
+        </div>
+    </div>
+    <div class="ui divider"></div>
+    <div class="nav-scroller">
         <nav class="nav d-flex justify-content-between">
             <a class="p-2 text-muted" href="#" th:each="category : ${article.board.categories}"
                th:text="${category.name}">Category
                 Name</a>
         </nav>
     </div>
+    <div class="ui divider"></div>
+</header>
 
-</div>
 
-<main role="main" class="container">
+<main role="main" class="ui container" style="padding-top: 2em;">
 
-    <div class="blog-post">
-        <h2 class="blog-post-title" th:text="${article.title}">Sample blog post</h2>
-        <p class="blog-post-meta"><span th:text="${#temporals.format(article.createdAt, 'MMMM d, yyyy')}">January 1, 2014</span>
-            by <a href="#" th:text="${article.writer.name}">Mark</a></p>
-        <div th:utext="${article.text}"></div>
+    <div class="ui piled segment" style="padding: 3em;">
 
-    </div><!-- /.blog-post -->
+        <h1 class="ui header">
+            <div class="content" th:text="${article.title}">
+                Sample blog post
+            </div>
+            <div class="sub header">
+                <th:block th:text="${#temporals.format(article.createdAt, 'MMMM d, yyyy')}">January 1, 2014</th:block>
+                by <a href="#" th:text="${article.writer.displayName}">Mark</a></div>
+        </h1>
+
+
+        <p th:utext="${article.text}"></p>
+
+
+        <div class="ui comments">
+            <h3 class="ui dividing header">Comments</h3>
+            <div class="comment">
+                <a class="avatar">
+                    <img src="https://i.pravatar.cc/300?img=3">
+                </a>
+                <div class="content">
+                    <a class="author">Matt</a>
+                    <div class="metadata">
+                        <span class="date">Today at 5:42PM</span>
+                    </div>
+                    <div class="text">
+                        How artistic!
+                    </div>
+                    <div class="actions">
+                        <a class="reply">Reply</a>
+                    </div>
+                </div>
+            </div>
+            <div class="comment">
+                <a class="avatar">
+                    <img src="https://i.pravatar.cc/300?img=6">
+                </a>
+                <div class="content">
+                    <a class="author">Elliot Fu</a>
+                    <div class="metadata">
+                        <span class="date">Yesterday at 12:30AM</span>
+                    </div>
+                    <div class="text">
+                        <p>This has been very useful for my research. Thanks as well!</p>
+                    </div>
+                    <div class="actions">
+                        <a class="reply">Reply</a>
+                    </div>
+                </div>
+                <div class="comments">
+                    <div class="comment">
+                        <a class="avatar">
+                            <img src="https://i.pravatar.cc/300?img=33">
+                        </a>
+                        <div class="content">
+                            <a class="author">Jenny Hess</a>
+                            <div class="metadata">
+                                <span class="date">Just now</span>
+                            </div>
+                            <div class="text">
+                                Elliot you are always so right :)
+                            </div>
+                            <div class="actions">
+                                <a class="reply">Reply</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="comment">
+                <a class="avatar">
+                    <img src="https://i.pravatar.cc/300?img=12">
+                </a>
+                <div class="content">
+                    <a class="author">Joe Henderson</a>
+                    <div class="metadata">
+                        <span class="date">5 days ago</span>
+                    </div>
+                    <div class="text">
+                        Dude, this is awesome. Thanks so much
+                    </div>
+                    <div class="actions">
+                        <a class="reply">Reply</a>
+                    </div>
+                </div>
+            </div>
+            <form class="ui reply form">
+                <div class="field">
+                    <textarea></textarea>
+                </div>
+                <div class="ui blue labeled submit icon button">
+                    <i class="icon edit"></i> Add Reply
+                </div>
+            </form>
+        </div>
+
+
+
+    </div>
+
 
 </main>
 
 <footer th:replace="~{fragments/footer :: footer}" class="blog-footer">
-    <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.
+    <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a
+            href="https://twitter.com/mdo">@mdo</a>.
     </p>
     <p>
         <a href="#">Back to top</a>

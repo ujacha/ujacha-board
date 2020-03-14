@@ -3,23 +3,28 @@ package net.ujacha.board.api;
 import com.thedeanda.lorem.Lorem;
 import com.thedeanda.lorem.LoremIpsum;
 import lombok.RequiredArgsConstructor;
-import net.ujacha.board.api.entity.Board;
-import net.ujacha.board.api.entity.Category;
-import net.ujacha.board.api.entity.Member;
-import net.ujacha.board.api.entity.MemberRole;
+import net.ujacha.board.api.entity.*;
+import net.ujacha.board.api.repository.ArticleRepository;
 import net.ujacha.board.api.repository.BoardRepository;
 import net.ujacha.board.api.repository.CategoryRepository;
 import net.ujacha.board.api.repository.MemberRepository;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 @Component
+@Transactional
 @RequiredArgsConstructor
 public class InitDataGenerator implements ApplicationRunner {
     private final MemberRepository memberRepository;
     private final BoardRepository boardRepository;
     private final CategoryRepository categoryRepository;
+    private final ArticleRepository articleRepository;
 
     private static final String DEFAULT_BOARD_TITLE = "NEWS";
 
@@ -71,6 +76,31 @@ public class InitDataGenerator implements ApplicationRunner {
 
     private void generateSampleData() {
         //TODO
-//        articleRepository.save(new Article(board, member, lorem.getTitle(3, 5), lorem.getHtmlParagraphs(2, 15), null));
+
+        Board board = boardRepository.findTop1ByOrderByDisplayOrder();
+        final List<Category> categories = board.getCategories();
+
+
+        // member 10
+        List<Member> members = new ArrayList<>();
+
+        for (int i = 0; i < 10; i++) {
+            members.add(memberRepository.save(new Member(lorem.getEmail(), "pass1234", lorem.getName(), MemberRole.USER)));
+        }
+
+        Random random = new Random();
+
+        // article 20
+        for (int i = 0; i < 20; i++) {
+            articleRepository.save(
+                    new Article(
+                            board,
+                            members.get(random.nextInt(members.size())),
+                            lorem.getTitle(3, 5),
+                            lorem.getHtmlParagraphs(2, 15),
+                            categories.get(random.nextInt(categories.size())))
+            );
+        }
+
     }
 }

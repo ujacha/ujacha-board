@@ -38,11 +38,11 @@ public class IndexController {
         final List<Category> categories = board.getCategories();
         model.addAttribute("categories", categories);
 
-        final Page<Article> page = articleRepository.findAll(PageRequest.of(0, 2, Sort.by("createdAt").descending()));
+        final Page<Article> page = articleRepository.findAll(PageRequest.of(0, 6, Sort.by("createdAt").descending()));
 //        final List<Article> articles = articleRepository.findTop5ByBoardAndDeletedAtNullOrderByCreatedAtDesc(board);
         model.addAttribute("page", page);
 
-        return "index";
+        return "board";
     }
 
     @GetMapping("/article/{id}")
