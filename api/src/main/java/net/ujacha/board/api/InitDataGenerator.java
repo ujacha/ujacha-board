@@ -44,7 +44,7 @@ public class InitDataGenerator implements ApplicationRunner {
     private final Lorem lorem = LoremIpsum.getInstance();
 
     @Override
-    public void run(ApplicationArguments args) throws Exception {
+    public void run(ApplicationArguments args) {
 
         // admin user
         generateAdmin();
@@ -59,7 +59,7 @@ public class InitDataGenerator implements ApplicationRunner {
 
 
     private void generateAdmin() {
-        memberRepository.save(new Member("admin@ujacha.net", "admin1234", "ADMIN", MemberRole.ADMIN));
+        memberRepository.save(Member.createMember("admin@ujacha.net", "admin1234", "ADMIN", MemberRole.ADMIN));
     }
 
     private void generateBaseData() {
@@ -68,13 +68,21 @@ public class InitDataGenerator implements ApplicationRunner {
         boardRepository.save(board);
 
         // Category
-        for (String categoryName : DEFAULT_CATEGORIES) {
-            categoryRepository.save(Category.builder().board(board).name(categoryName).build());
+        for (int i = 0; i <DEFAULT_CATEGORIES.length ; i++) {
+            categoryRepository.save(Category.builder().board(board).name(DEFAULT_CATEGORIES[i]).displayOrder(i).build());
+
         }
 
     }
 
     private void generateSampleData() {
+
+        // 2nd board
+        final Board newBoard = boardRepository.save(Board.builder().title("취미").displayOrder(1).build());
+
+        for (int i = 0; i < 3; i++) {
+            categoryRepository.save(Category.builder().board(newBoard).name("cate" + i).displayOrder(i).build());
+        }
 
         Board board = boardRepository.findTop1ByOrderByDisplayOrder();
         final List<Category> categories = categoryRepository.findByBoardAndDeletedAtIsNullOrderByNameAsc(board);
@@ -84,7 +92,7 @@ public class InitDataGenerator implements ApplicationRunner {
         List<Member> members = new ArrayList<>();
 
         for (int i = 0; i < 10; i++) {
-            members.add(memberRepository.save(new Member(lorem.getEmail(), "pass1234", lorem.getName(), MemberRole.USER)));
+            members.add(memberRepository.save(Member.createMember(lorem.getEmail(), "pass1234", lorem.getName(), MemberRole.USER)));
         }
 
         Random random = new Random();
@@ -92,12 +100,13 @@ public class InitDataGenerator implements ApplicationRunner {
         // article 20
         for (int i = 0; i < 20; i++) {
             articleRepository.save(
-                    new Article(
-                            board,
-                            members.get(random.nextInt(members.size())),
-                            lorem.getTitle(3, 5),
-                            lorem.getHtmlParagraphs(2, 15),
-                            categories.get(random.nextInt(categories.size())))
+                    Article.builder()
+                            .board(board)
+                            .writer(members.get(random.nextInt(members.size())))
+                            .title(lorem.getTitle(3, 5))
+                            .text(lorem.getHtmlParagraphs(2, 15))
+                            .category(categories.get(random.nextInt(categories.size())))
+                            .build()
             );
         }
 

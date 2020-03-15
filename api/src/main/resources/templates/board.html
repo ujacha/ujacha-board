@@ -31,15 +31,16 @@
 
         </div>
         <div class="center aligned eight wide column">
-            <div class="ui dropdown">
+            <div class="ui inline dropdown">
                 <div class="text">
                     <th:block th:text="${board.title}">
                         Board Name
                     </th:block>
-                    <i class="dropdown icon"></i>
                 </div>
+                <i class="dropdown icon"></i>
                 <div class="menu">
-                    <div class="item" th:each="b : ${boards}" th:text="${b.title}">Board1</div>
+                    <div class="header">Boards</div>
+                    <div class="item" th:each="b : ${boards}" th:text="${b.title}" th:attr="data-text=${b.title}">Board1</div>
                 </div>
             </div>
 

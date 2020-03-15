@@ -1,9 +1,6 @@
 package net.ujacha.board.api.entity;
 
-import lombok.AccessLevel;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -11,9 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@EqualsAndHashCode(of = "id", callSuper = false)
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Getter
+@EqualsAndHashCode(of = "id", callSuper = false)
+
 public class Article extends CommonEntity {
     @Id
     @GeneratedValue
@@ -22,8 +22,10 @@ public class Article extends CommonEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "board_id")
+    @NonNull
     private Board board;
 
+    @NonNull
     private String title;
 
     @Lob
@@ -31,6 +33,7 @@ public class Article extends CommonEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "writer_id")
+    @NonNull
     private Member writer;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -39,14 +42,6 @@ public class Article extends CommonEntity {
 
     @OneToMany(mappedBy = "article")
     private List<Comment> comments = new ArrayList<>();
-
-    public Article(Board board, Member writer, String title, String text, Category category) {
-        this.board = board;
-        this.writer = writer;
-        this.title = title;
-        this.text = text;
-        this.category = category;
-    }
 
     public void updateText(String text) {
         this.text = text;
@@ -59,3 +54,4 @@ public class Article extends CommonEntity {
         return comment;
     }
 }
+

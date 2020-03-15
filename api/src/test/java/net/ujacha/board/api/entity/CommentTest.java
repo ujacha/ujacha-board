@@ -22,22 +22,20 @@ class CommentTest {
         Board board = Board.builder().title("Board1").displayOrder(0).build();
         em.persist(board);
 
-        Member userA = new Member("user1@example.com", "pass", "user1", MemberRole.USER);
-        Member userB = new Member("user2@example.com", "pass", "user2", MemberRole.USER);
+        Member userA = Member.createMember("user1@example.com", "pass", "user1", MemberRole.USER);
+        Member userB = Member.createMember("user2@example.com", "pass", "user2", MemberRole.USER);
         em.persist(userA);
         em.persist(userB);
 
-        Category category = Category.builder().name("Category1").build();
+        Category category = Category.builder().board(board).name("Category1").displayOrder(0).build();
         em.persist(category);
 
-        Article article = TestHelper.createArticle(board, userA, category, "title", "text");
+        Article article = Article.builder().board(board).writer(userA).category(category).title("title").text("text").build();
         em.persist(article);
 
         // When
-        Comment comment = new Comment(userB, "comment");
+        Comment comment = Comment.builder().article(article).writer(userB).text("comment").build();
         em.persist(comment);
-
-        article.addComment(comment);
 
         // Then
 

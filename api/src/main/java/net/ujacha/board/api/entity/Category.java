@@ -5,9 +5,11 @@ import lombok.*;
 import javax.persistence.*;
 
 @Entity
+@Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@EqualsAndHashCode(of = "id", callSuper = false)
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Getter
+@EqualsAndHashCode(of = "id", callSuper = false)
 public class Category extends CommonEntity{
     @Id
     @GeneratedValue
@@ -16,14 +18,19 @@ public class Category extends CommonEntity{
 
     @ManyToOne
     @JoinColumn(name = "board_id")
+    @NonNull
     private Board board;
+
+    @NonNull
     private String name;
 
-    @Builder
-    public Category(Board board, String name) {
-        this.board = board;
-        this.name = name;
+    @NonNull
+    private Integer displayOrder;
+
+//    public Category(Board board, String name) {
+//        this.board = board;
+//        this.name = name;
 
 //        board.getCategories().add(this);
-    }
+//    }
 }

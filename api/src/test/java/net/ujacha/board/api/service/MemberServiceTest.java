@@ -5,13 +5,9 @@ import net.ujacha.board.api.entity.MemberRole;
 import net.ujacha.board.api.repository.MemberRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.Optional;
-
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class MemberServiceTest {
@@ -29,7 +25,7 @@ class MemberServiceTest {
         final String password = "password";
         final String displayName = "UserA";
         final MemberRole memberRole = MemberRole.USER;
-        Member member = new Member(email, password, displayName, memberRole);
+        Member member = Member.createMember(email, password, displayName, memberRole);
 
         // When
         memberService.joinMember(member);
@@ -44,7 +40,7 @@ class MemberServiceTest {
         final boolean verifyPassword = memberService.verifyPassword(memberId, password);
         assertThat(verifyPassword).isEqualTo(true);
 
-        final boolean verifyPasswordFail = memberService.verifyPassword(memberId, "xxxx");
+        final boolean verifyPasswordFail = memberService.verifyPassword(memberId, "wrong_password");
         assertThat(verifyPasswordFail).isEqualTo(false);
 
 

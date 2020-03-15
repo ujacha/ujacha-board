@@ -2,20 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c16d268e-bad0-4400-b5ff-4c6784a4b8d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/service/LoginService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/resources/templates/fragments/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/InitDataGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/InitDataGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/controller/BoardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/controller/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/entity/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/entity/Article.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/entity/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/entity/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/entity/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/entity/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/repository/BoardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/repository/BoardRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/repository/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/repository/CategoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/service/MemberService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/resources/templates/article.html" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/templates/article.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/entity/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/entity/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/entity/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/net/ujacha/board/api/entity/Member.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/resources/templates/board.html" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/templates/board.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/resources/templates/fragments/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/templates/fragments/head.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/entity/ArticleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/entity/ArticleTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/entity/CommentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/entity/CommentTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/entity/TestHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/service/MemberServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/net/ujacha/board/api/service/MemberServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,24 +102,46 @@
       <recent name="D:\Projects\ujacha-board\api\src\main\resources\templates" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.UjachaBoardApiApplication">
-    <configuration name="MemberControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.net.ujacha.board.api in api">
+    <configuration name="CommentTest" type="JUnit" factoryName="JUnit" singleton="false" temporary="true" nameIsGenerated="true">
       <module name="api" />
+      <useClassPathOnly />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="net.ujacha.board.api.controller.*" />
+          <option name="PATTERN" value="net.ujacha.board.api.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="net.ujacha.board.api.controller" />
-      <option name="MAIN_CLASS_NAME" value="net.ujacha.board.api.controller.MemberControllerTest" />
+      <option name="PACKAGE_NAME" value="net.ujacha.board.api" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="uniqueId" />
+      <option name="PARAMETERS" value="" />
+      <uniqueIds>
+        <uniqueId value="[engine:junit-jupiter]/[class:net.ujacha.board.api.entity.CommentTest]" />
+      </uniqueIds>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DateUtilsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="net.ujacha.board.api.common.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="net.ujacha.board.api.common" />
+      <option name="MAIN_CLASS_NAME" value="net.ujacha.board.api.common.DateUtilsTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MemberControllerTest.testLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MemberControllerTest" type="JUnit" factoryName="JUnit" singleton="false" temporary="true" nameIsGenerated="true">
       <module name="api" />
+      <useClassPathOnly />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="net.ujacha.board.api.controller.*" />
@@ -129,45 +150,14 @@
       </extension>
       <option name="PACKAGE_NAME" value="net.ujacha.board.api.controller" />
       <option name="MAIN_CLASS_NAME" value="net.ujacha.board.api.controller.MemberControllerTest" />
-      <option name="METHOD_NAME" value="testLogin" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MemberControllerTest.testLogin_fail_email" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="api" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="net.ujacha.board.api.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="net.ujacha.board.api.controller" />
-      <option name="MAIN_CLASS_NAME" value="net.ujacha.board.api.controller.MemberControllerTest" />
-      <option name="METHOD_NAME" value="testLogin_fail_email" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MemberServiceTest.testJoinMember" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="api" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="net.ujacha.board.api.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="net.ujacha.board.api.service" />
-      <option name="MAIN_CLASS_NAME" value="net.ujacha.board.api.service.MemberServiceTest" />
-      <option name="METHOD_NAME" value="testJoinMember" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PasswordUtilsTest.testVerifyProvidedPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PasswordUtilsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="api" />
       <extension name="coverage">
         <pattern>
@@ -177,8 +167,26 @@
       </extension>
       <option name="PACKAGE_NAME" value="net.ujacha.board.api.common" />
       <option name="MAIN_CLASS_NAME" value="net.ujacha.board.api.common.PasswordUtilsTest" />
-      <option name="METHOD_NAME" value="testVerifyProvidedPassword" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="net.ujacha.board.api in api" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="api" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="net.ujacha.board.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="net.ujacha.board.api" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="PARAMETERS" value="" />
+      <fork_mode value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -191,20 +199,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.MemberServiceTest.testJoinMember" />
-      <item itemvalue="JUnit.PasswordUtilsTest.testVerifyProvidedPassword" />
-      <item itemvalue="JUnit.MemberControllerTest.testLogin" />
       <item itemvalue="JUnit.MemberControllerTest" />
-      <item itemvalue="JUnit.MemberControllerTest.testLogin_fail_email" />
+      <item itemvalue="JUnit.net.ujacha.board.api in api" />
+      <item itemvalue="JUnit.DateUtilsTest" />
+      <item itemvalue="JUnit.PasswordUtilsTest" />
+      <item itemvalue="JUnit.CommentTest" />
       <item itemvalue="Spring Boot.UjachaBoardApiApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.net.ujacha.board.api in api" />
+        <item itemvalue="JUnit.CommentTest" />
         <item itemvalue="JUnit.MemberControllerTest" />
-        <item itemvalue="JUnit.MemberControllerTest.testLogin_fail_email" />
-        <item itemvalue="JUnit.MemberControllerTest.testLogin" />
-        <item itemvalue="JUnit.MemberServiceTest.testJoinMember" />
-        <item itemvalue="JUnit.PasswordUtilsTest.testVerifyProvidedPassword" />
+        <item itemvalue="JUnit.PasswordUtilsTest" />
+        <item itemvalue="JUnit.DateUtilsTest" />
       </list>
     </recent_temporary>
   </component>
@@ -230,7 +238,8 @@
       <workItem from="1584180719797" duration="78000" />
       <workItem from="1584180824489" duration="9826000" />
       <workItem from="1584192287168" duration="5811000" />
-      <workItem from="1584243089041" duration="7165000" />
+      <workItem from="1584243089041" duration="7570000" />
+      <workItem from="1584252952324" duration="5932000" />
     </task>
     <servers />
   </component>
@@ -255,10 +264,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#Project_Structure/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583956775937" />
-    <state x="0" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584174917571">
+    <state x="512" y="123" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584274870568">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="0" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584174917571" />
+    <state x="512" y="123" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584274870568" />
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1584193031839">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -283,6 +292,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="714" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584169683787" />
+    <state x="552" y="150" key="#net.ujacha.board.api_in_api" timestamp="1584274485445">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="150" key="#net.ujacha.board.api_in_api/0.0.1920.1040@0.0.1920.1040" timestamp="1584274485445" />
     <state x="235" y="225" key="#xdebugger.evaluate" timestamp="1584174933400">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -291,46 +304,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584174091490" />
-    <state width="1877" height="336" key="GridCell.Tab.0.bottom" timestamp="1584250892684">
+    <state width="1877" height="336" key="GridCell.Tab.0.bottom" timestamp="1584274885025">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="307" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584198104210" />
-    <state width="1877" height="336" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1584250892684" />
-    <state width="1877" height="336" key="GridCell.Tab.0.center" timestamp="1584250892683">
+    <state width="1877" height="336" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584274885025" />
+    <state width="1877" height="336" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1584251382213" />
+    <state width="1877" height="336" key="GridCell.Tab.0.center" timestamp="1584274885025">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="307" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584198104210" />
-    <state width="1877" height="336" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1584250892683" />
-    <state width="1877" height="336" key="GridCell.Tab.0.left" timestamp="1584250892683">
+    <state width="1877" height="336" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584274885025" />
+    <state width="1877" height="336" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1584251382213" />
+    <state width="1877" height="336" key="GridCell.Tab.0.left" timestamp="1584274885024">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="307" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584198104210" />
-    <state width="1877" height="336" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1584250892683" />
-    <state width="1877" height="336" key="GridCell.Tab.0.right" timestamp="1584250892683">
+    <state width="1877" height="336" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584274885024" />
+    <state width="1877" height="336" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1584251382213" />
+    <state width="1877" height="336" key="GridCell.Tab.0.right" timestamp="1584274885025">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="307" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584198104210" />
-    <state width="1877" height="336" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1584250892683" />
-    <state width="1877" height="336" key="GridCell.Tab.1.bottom" timestamp="1584250892684">
+    <state width="1877" height="336" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584274885025" />
+    <state width="1877" height="336" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1584251382213" />
+    <state width="1877" height="336" key="GridCell.Tab.1.bottom" timestamp="1584273595864">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="307" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584198104211" />
-    <state width="1877" height="336" key="GridCell.Tab.1.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1584250892684" />
-    <state width="1877" height="336" key="GridCell.Tab.1.center" timestamp="1584250892684">
+    <state width="1877" height="336" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584273595864" />
+    <state width="1877" height="336" key="GridCell.Tab.1.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1584251382213" />
+    <state width="1877" height="336" key="GridCell.Tab.1.center" timestamp="1584273595864">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="307" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584198104211" />
-    <state width="1877" height="336" key="GridCell.Tab.1.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1584250892684" />
-    <state width="1877" height="336" key="GridCell.Tab.1.left" timestamp="1584250892684">
+    <state width="1877" height="336" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584273595864" />
+    <state width="1877" height="336" key="GridCell.Tab.1.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1584251382213" />
+    <state width="1877" height="336" key="GridCell.Tab.1.left" timestamp="1584273595864">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="307" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584198104211" />
-    <state width="1877" height="336" key="GridCell.Tab.1.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1584250892684" />
-    <state width="1877" height="336" key="GridCell.Tab.1.right" timestamp="1584250892684">
+    <state width="1877" height="336" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584273595864" />
+    <state width="1877" height="336" key="GridCell.Tab.1.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1584251382213" />
+    <state width="1877" height="336" key="GridCell.Tab.1.right" timestamp="1584273595864">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="307" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584198104211" />
-    <state width="1877" height="336" key="GridCell.Tab.1.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1584250892684" />
+    <state width="1877" height="336" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584273595864" />
+    <state width="1877" height="336" key="GridCell.Tab.1.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1584251382213" />
     <state width="914" height="351" key="GridCell.Tab.2.bottom" timestamp="1584180409830">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -368,10 +381,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="753" y="302" key="chooseDestDirectoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584107699261" />
-    <state x="764" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584087991896">
+    <state x="764" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584273712983">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="764" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584087991896" />
+    <state x="764" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584273712983" />
     <state x="731" y="238" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1584192416829">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -396,5 +409,10 @@
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584194781285" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583963678546" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ujacha_board$net_ujacha_board_api_in_api.ic" NAME="net.ujacha.board.api in api Coverage Results" MODIFIED="1584274893137" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>net.ujacha.board.api.*</FILTER>
+    </SUITE>
   </component>
 </project>

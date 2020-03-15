@@ -42,7 +42,7 @@ public class MemberController {
             throw new IllegalArgumentException();
         }
 
-        Member member = new Member(form.getEmail(), form.getPassword(), form.getDisplayName(), MemberRole.USER);
+        Member member = Member.createMember(form.getEmail(), form.getPassword(), form.getDisplayName(), MemberRole.USER);
         memberService.joinMember(member);
 
         return "redirect:/";

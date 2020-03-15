@@ -20,7 +20,7 @@ class ArticleTest {
     @Test
     public void Article_저장() {
         // Given
-        Member member = new Member("email@example.com", "pass", "devin", MemberRole.USER);
+        Member member = Member.createMember("email@example.com", "pass", "devin", MemberRole.USER);
 
         em.persist(member);
 
@@ -30,7 +30,8 @@ class ArticleTest {
 
         // When
         for (int i = 0; i < 10; i++) {
-            em.persist(new Article(board, member, "제목_" + i, "내용 " + i, null));
+            em.persist(Article.builder()
+                    .board(board).writer(member).title("제목_" + i).text("내용 " + i).category(null).build());
         }
         final List<Article> result = em.createQuery(
                 "select a" +

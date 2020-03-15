@@ -1,16 +1,15 @@
 package net.ujacha.board.api.entity;
 
-import lombok.AccessLevel;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
 import static javax.persistence.FetchType.LAZY;
 
 @Entity
+@Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 @EqualsAndHashCode(of = "id", callSuper = false)
 @Getter
 public class Comment extends CommonEntity {
@@ -20,20 +19,19 @@ public class Comment extends CommonEntity {
     private Long id;
 
     @Lob
+    @NonNull
     private String text;
 
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "article_id")
+    @NonNull
     private Article article;
 
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "writer_id")
+    @NonNull
     private Member writer;
 
-    public Comment(Member writer, String text) {
-        this.writer = writer;
-        this.text = text;
-    }
 
     public void updateText(String text) {
         this.text = text;
