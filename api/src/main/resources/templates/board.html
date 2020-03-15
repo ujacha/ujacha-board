@@ -31,18 +31,33 @@
 
         </div>
         <div class="center aligned eight wide column">
-            <div class="ui inline dropdown">
-                <div class="text">
-                    <th:block th:text="${board.title}">
-                        Board Name
-                    </th:block>
-                </div>
+
+            <div class="ui floating dropdown button">
+                <div class="text" th:text="${board.title}">Go to</div>
                 <i class="dropdown icon"></i>
                 <div class="menu">
-                    <div class="header">Boards</div>
-                    <div class="item" th:each="b : ${boards}" th:text="${b.title}" th:attr="data-text=${b.title}">Board1</div>
+                    <a class="item" href="#link1" th:href="@{/board(id=${b.id})}" th:each="b : ${boards}"
+                       th:text="${b.title}">Board Name</a>
                 </div>
             </div>
+
+<!--            <div class="ui inline dropdown">-->
+<!--                <div class="ui header text" th:text="${board.title}">-->
+<!--                    Board Name-->
+<!--                </div>-->
+<!--                <i class="dropdown icon"></i>-->
+<!--                <div class="menu">-->
+<!--                    &lt;!&ndash;                    <div class="header">Boards</div>&ndash;&gt;-->
+<!--                    <div class="item" th:each="b : ${boards}" th:attr="data-text=${b.title}">-->
+<!--                        <div class="ui header" th:text="${b.title}">-->
+<!--                            Board1-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash;                    <a href="#" th:href="@{/board(id=${b.id})}">&ndash;&gt;-->
+<!--                    &lt;!&ndash;                        &ndash;&gt;-->
+<!--                    &lt;!&ndash;                    </a>&ndash;&gt;-->
+<!--                </div>-->
+<!--            </div>-->
 
         </div>
         <div class="right aligned four wide column" th:replace="~{fragments/header::loginInfo}">
@@ -52,20 +67,22 @@
     <div class="ui divider"></div>
     <div class="ui text menu">
         <div class="header item">Category</div>
-        <a href="#" class="item" th:each="category : ${categories}" th:text="${category.name}">Cate</a>
+        <a href="#" th:href="@{/board(id=${board.id})}" class="item">All</a>
+        <a href="#" th:href="@{/board(id=${board.id}, category=${category.id})}" class="item"
+           th:each="category : ${categories}" th:text="${category.name}">Cate</a>
+        <a href="#" th:href="@{/board(id=${board.id}, category=0)}" class="item">Not assigned</a>
     </div>
     <div class="ui divider"></div>
 </header>
 
 <main role="main" class="ui container">
-
     <div class="ui three stackable cards">
         <!--/*@thymesVar id="article" type="net.ujacha.board.api.entity.Article"*/-->
         <div class="ui fluid card" th:each="article : ${page.getContent()}">
             <div class="content">
 
                 <div class="header">
-                    <a href="article.html" th:href="@{/article/{id}(id=${article.id})}"
+                    <a href="article.html" th:href="@{/article(id=${article.id})}"
                        th:text="${#strings.abbreviate(article.title, 32)}"
                        th:title="${article.title}">Article Title</a>
                 </div>
@@ -88,6 +105,32 @@
             </div>
         </div>
     </div>
+
+    <div>
+        <div class="ui hidden divider"></div>
+        <div class="ui pagination menu" th:if="${page.hasContent()}">
+            <a class="item" href="#"
+               th:href="@{/board(id=${board.id}, category=${selectedCategoryId == -1 ? null : selectedCategoryId}, page=${pagenum})}"
+               th:text="${pagenum}" th:each="pagenum : ${#numbers.sequence(1,  page.getTotalPages())}">#</a>
+            <!--            <a class="active item">-->
+            <!--                1-->
+            <!--            </a>-->
+            <!--            <div class="disabled item">-->
+            <!--                ...-->
+            <!--            </div>-->
+            <!--            <a class="item">-->
+            <!--                10-->
+            <!--            </a>-->
+            <!--            <a class="item">-->
+            <!--                11-->
+            <!--            </a>-->
+            <!--            <a class="item">-->
+            <!--                12-->
+            <!--            </a>-->
+        </div>
+
+    </div>
+
 </main>
 <footer th:replace="~{fragments/footer :: footer}" class="ui center aligned container">
     <div class="ui divider"></div>
@@ -100,7 +143,9 @@
 </footer>
 <script>
     $(function () {
-        $('.ui.dropdown').dropdown();
+        $('.ui.dropdown').dropdown(
+            {action: 'hide'}
+        );
     })
 </script>
 </body>

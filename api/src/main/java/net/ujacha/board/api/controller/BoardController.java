@@ -10,14 +10,14 @@ import net.ujacha.board.api.repository.ArticleRepository;
 import net.ujacha.board.api.repository.BoardRepository;
 import net.ujacha.board.api.repository.CategoryRepository;
 import org.springframework.data.domain.*;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 @RequiredArgsConstructor
@@ -28,42 +28,46 @@ public class BoardController {
     private final CategoryRepository categoryRepository;
     private final ArticleRepository articleRepository;
 
-    @GetMapping("/")
-    public String index(Model model) {
-        log.info("INDEX");
+    @GetMapping("/board")
+    public String board(
+            @RequestParam(name = "id", required = true) long id,
+            @RequestParam(name = "category", required = false, defaultValue = "-1") long categoryId,
+            @RequestParam(name = "page", required = false, defaultValue = "1") int pageNum,
+            Model model) {
+
+        log.info("BOARD: {}, CATEGORY: {}, PAGE: {}", id, categoryId, pageNum);
 
         final List<Board> boards = boardRepository.findAllByDeletedAtIsNullOrderByDisplayOrderAsc();
-        model.addAttribute("boards", boards);
+        final Board board = boardRepository.findById(id).orElse(null);
+        if (board == null) {
+            throw new ResourceNotFoundException("Not Found Board.");
+        }
 
-        final Board board = boardRepository.findTop1ByOrderByDisplayOrder();
-        model.addAttribute("board", board);
 
-        final List<Category> categories = categoryRepository.findByBoardAndDeletedAtIsNullOrderByNameAsc(board);
-        model.addAttribute("categories", categories);
+        final List<Category> categories = categoryRepository.findByBoardAndDeletedAtIsNullOrderByDisplayOrderAsc(board);
 
-        final Page<Article> page = articleRepository.findAll(PageRequest.of(0, 6, Sort.by("createdAt").descending()));
+        final Page<Article> pagedArticles;
+
+        if (categoryId == 0) {
+//            pagedArticles = articleRepository.findAllByCategoryIsNullAndDeletedAtIsNull(PageRequest.of(pageNum - 1, 6, Sort.by("createdAt").descending()));
+            pagedArticles = articleRepository.findByBoardAndCategoryAndDeletedAtIsNull(board, null, PageRequest.of(pageNum - 1, 6, Sort.Direction.DESC, "createdAt"));
+        } else if (categoryId > 0) {
+            Category selectedCategory = categoryRepository.findById(categoryId).orElse(null);
+            pagedArticles = articleRepository.findByBoardAndCategoryAndDeletedAtIsNull(board, selectedCategory, PageRequest.of(pageNum - 1, 6, Sort.Direction.DESC, "createdAt"));
+        } else {
+            pagedArticles = articleRepository.findByBoardAndDeletedAtIsNull(board, PageRequest.of(pageNum - 1, 6, Sort.Direction.DESC, "createdAt"));
+        }
+
 //        final List<Article> articles = articleRepository.findTop5ByBoardAndDeletedAtNullOrderByCreatedAtDesc(board);
-        model.addAttribute("page", page);
+
+        model.addAttribute("boards", boards);
+        model.addAttribute("board", board);
+        model.addAttribute("categories", categories);
+        model.addAttribute("page", pagedArticles);
+        model.addAttribute("selectedCategoryId", categoryId);
 
         return "board";
     }
 
-    @GetMapping("/article/{id}")
-    public String article(@PathVariable("id") long id, Model model) {
 
-        Article article = articleRepository.findById(id).orElse(null);
-
-
-        if(article == null){
-            throw new ResourceNotFoundException();
-        }
-
-
-        final List<Category> categories = categoryRepository.findByBoardAndDeletedAtIsNullOrderByNameAsc(article.getBoard());
-
-        model.addAttribute("article", article);
-        model.addAttribute("categories", categories);
-
-        return "article";
-    }
 }

@@ -85,7 +85,8 @@ public class InitDataGenerator implements ApplicationRunner {
         }
 
         Board board = boardRepository.findTop1ByOrderByDisplayOrder();
-        final List<Category> categories = categoryRepository.findByBoardAndDeletedAtIsNullOrderByNameAsc(board);
+        final List<Category> categories = categoryRepository.findByBoardAndDeletedAtIsNullOrderByDisplayOrderAsc(board);
+        categories.add(null);
 
 
         // member 10
@@ -98,7 +99,7 @@ public class InitDataGenerator implements ApplicationRunner {
         Random random = new Random();
 
         // article 20
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 200; i++) {
             articleRepository.save(
                     Article.builder()
                             .board(board)
