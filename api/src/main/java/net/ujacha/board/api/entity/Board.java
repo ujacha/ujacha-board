@@ -18,8 +18,8 @@ public class Board extends CommonEntity {
     private Long id;
     private String title;
 
-    @OneToMany(mappedBy = "board")
-    private List<Category> categories = new ArrayList<>();
+//    @OneToMany(mappedBy = "board")
+//    private List<Category> categories = new ArrayList<>();
 
     private int displayOrder;
 

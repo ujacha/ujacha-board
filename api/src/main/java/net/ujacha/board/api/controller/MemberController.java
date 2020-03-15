@@ -56,13 +56,11 @@ public class MemberController {
     }
 
     @PostMapping("/login")
-    public String login(@ModelAttribute @Valid LoginForm form, Errors errors, Model model, HttpSession httpSession) {
+    public String login(@ModelAttribute @Valid LoginForm form, Errors errors, Model model, HttpSession session) {
 
         // Save Login Session
 
-        httpSession.removeAttribute(Const.UJACHA_BOARD_LOGIN);
-        httpSession.removeAttribute(Const.UJACHA_BOARD_ROLE);
-        httpSession.removeAttribute(Const.UJACHA_BOARD_NAME);
+        clearLoginSession(session);
 
         LoginForm newForm = new LoginForm();
         newForm.setEmail(form.getEmail());
@@ -87,13 +85,32 @@ public class MemberController {
             return "login";
         }
 
-        Member loginMember = memberService.findOne(memberId);
+        Member loginMember = memberService.findMember(memberId);
 
-        httpSession.setAttribute(Const.UJACHA_BOARD_LOGIN, loginMember.getId());
-        httpSession.setAttribute(Const.UJACHA_BOARD_ROLE, loginMember.getMemberRole());
-        httpSession.setAttribute(Const.UJACHA_BOARD_NAME, loginMember.getDisplayName());
+        saveLoginSession(session, loginMember);
 
         return "redirect:/";
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session){
+
+        clearLoginSession(session);
+
+        return "redirect:/";
+
+    }
+
+    private void saveLoginSession(HttpSession session, Member loginMember) {
+        session.setAttribute(Const.UJACHA_BOARD_LOGIN, loginMember.getId());
+        session.setAttribute(Const.UJACHA_BOARD_ROLE, loginMember.getMemberRole());
+        session.setAttribute(Const.UJACHA_BOARD_NAME, loginMember.getDisplayName());
+    }
+
+    private void clearLoginSession(HttpSession session) {
+        session.removeAttribute(Const.UJACHA_BOARD_LOGIN);
+        session.removeAttribute(Const.UJACHA_BOARD_ROLE);
+        session.removeAttribute(Const.UJACHA_BOARD_NAME);
     }
 
 }

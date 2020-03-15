@@ -24,6 +24,6 @@ public class Category extends CommonEntity{
         this.board = board;
         this.name = name;
 
-        board.getCategories().add(this);
+//        board.getCategories().add(this);
     }
 }

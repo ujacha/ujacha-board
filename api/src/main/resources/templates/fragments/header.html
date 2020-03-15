@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:replace="~{fragments/head :: head}">
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>UJACHA BOARD - NEWS</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+              integrity="sha256-9mbkOfVho3ZPXfM7W8sV2SndrGDuh7wuyLjtsWeTI1Q=" crossorigin="anonymous"/>
+        <!--        <link rel="stylesheet" th:href="@{/css/site.css}">-->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+                integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
+                integrity="sha256-t8GepnyPmw9t+foMh3mKNvcorqNHamSKtKRxxpUEgFI=" crossorigin="anonymous"></script>
+    </th:block>
+
+    <style>
+        .top-pd {
+            padding-top: 1.5em;
+        }
+    </style>
+
+</head>
+<body>
+<header class="ui container top-pd">
+    <div class="ui grid">
+        <div class="four wide column">
+
+        </div>
+        <div class="center aligned eight wide column">
+            <a class="ui huge header" href="#">Board Name</a>
+        </div>
+        <div class="right aligned four wide column" th:fragment="loginButton">
+        </div>
+    </div>
+    <div class="ui divider"></div>
+    <div class="ui grid">
+        <div class="four wide column">
+
+        </div>
+        <div class="center aligned eight wide column">
+            <a class="ui huge header" href="#">Board Name</a>
+        </div>
+        <div class="right aligned four wide column" th:fragment="loginInfo">
+            <th:block th:switch="${isLogined}" th:with="isLogined = ${#session?.getAttribute('UJACHA_BOARD_LOGIN') != null ? true : false}">
+                <div th:case="false">
+                    <a class="ui primary basic compact button" href="login.html" th:href="@{/login}">Sign in</a>
+                </div>
+                <div th:case="true">
+                    <span th:text="${#session.getAttribute('UJACHA_BOARD_NAME')}">Login Name</span>
+                    <a class="ui primary basic compact button" href="login.html" th:href="@{/logout}">Sign out</a>
+                </div>
+            </th:block>
+
+        </div>
+    </div>
+    <div class="ui divider"></div>
+    <div class="nav-scroller">
+        <nav class="nav d-flex justify-content-between">
+            <a class="text-muted" href="#">Category1</a>
+            <a class="text-muted" href="#">Category2</a>
+            <a class="text-muted" href="#">Category3</a>
+            <a class="text-muted" href="#">Category4</a>
+            <a class="text-muted" href="#">Category5</a>
+            <a class="text-muted" href="#">Category6</a>
+        </nav>
+    </div>
+    <div class="ui divider"></div>
+</header>
+
+</body>
+</html>

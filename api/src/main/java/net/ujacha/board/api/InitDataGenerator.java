@@ -75,10 +75,9 @@ public class InitDataGenerator implements ApplicationRunner {
     }
 
     private void generateSampleData() {
-        //TODO
 
         Board board = boardRepository.findTop1ByOrderByDisplayOrder();
-        final List<Category> categories = board.getCategories();
+        final List<Category> categories = categoryRepository.findByBoardAndDeletedAtIsNullOrderByNameAsc(board);
 
 
         // member 10

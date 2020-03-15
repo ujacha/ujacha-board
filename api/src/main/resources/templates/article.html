@@ -40,9 +40,8 @@
     <div class="ui divider"></div>
     <div class="nav-scroller">
         <nav class="nav d-flex justify-content-between">
-            <a class="p-2 text-muted" href="#" th:each="category : ${article.board.categories}"
-               th:text="${category.name}">Category
-                Name</a>
+            <a class="p-2 text-muted" href="#" th:each="category : ${categories}"
+               th:text="${category.name}">Category Name</a>
         </nav>
     </div>
     <div class="ui divider"></div>

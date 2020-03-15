@@ -31,18 +31,27 @@
 
         </div>
         <div class="center aligned eight wide column">
-            <a class="ui huge header" href="#" th:text="${board.title}">Board Name</a>
+            <div class="ui dropdown">
+                <div class="text">
+                    <th:block th:text="${board.title}">
+                        Board Name
+                    </th:block>
+                    <i class="dropdown icon"></i>
+                </div>
+                <div class="menu">
+                    <div class="item" th:each="b : ${boards}" th:text="${b.title}">Board1</div>
+                </div>
+            </div>
+
         </div>
-        <div class="right aligned four wide column">
+        <div class="right aligned four wide column" th:replace="~{fragments/header::loginInfo}">
             <a class="ui primary basic compact button" href="login.html" th:href="@{/login}">Sign up</a>
         </div>
     </div>
     <div class="ui divider"></div>
-    <div class="nav-scroller">
-        <nav class="nav d-flex justify-content-between">
-            <a class="p-2 text-muted" href="#" th:each="category : ${categories}" th:text="${category.name}">Category
-                Name</a>
-        </nav>
+    <div class="ui text menu">
+        <div class="header item">Category</div>
+        <a href="#" class="item" th:each="category : ${categories}" th:text="${category.name}">Cate</a>
     </div>
     <div class="ui divider"></div>
 </header>
@@ -90,8 +99,7 @@
 </footer>
 <script>
     $(function () {
-        console.log("INIT");
-        $('[data-toggle="tooltip"]').tooltip()
+        $('.ui.dropdown').dropdown();
     })
 </script>
 </body>

@@ -31,7 +31,7 @@ public class MemberService {
         return member.map(m -> PasswordUtils.verifyUserPassword(password, m.getPassword(), m.getSalt())).orElse(false);
     }
 
-    public Member findOne(Long memberId) {
+    public Member findMember(Long memberId) {
         return memberRepository.findById(memberId).get();
     }
 }

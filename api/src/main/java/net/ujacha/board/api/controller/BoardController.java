@@ -22,7 +22,7 @@ import java.util.Optional;
 @Controller
 @RequiredArgsConstructor
 @Slf4j
-public class IndexController {
+public class BoardController {
 
     private final BoardRepository boardRepository;
     private final CategoryRepository categoryRepository;
@@ -32,10 +32,13 @@ public class IndexController {
     public String index(Model model) {
         log.info("INDEX");
 
+        final List<Board> boards = boardRepository.findAllByDeletedAtIsNullOrderByDisplayOrderAsc();
+        model.addAttribute("boards", boards);
+
         final Board board = boardRepository.findTop1ByOrderByDisplayOrder();
         model.addAttribute("board", board);
 
-        final List<Category> categories = board.getCategories();
+        final List<Category> categories = categoryRepository.findByBoardAndDeletedAtIsNullOrderByNameAsc(board);
         model.addAttribute("categories", categories);
 
         final Page<Article> page = articleRepository.findAll(PageRequest.of(0, 6, Sort.by("createdAt").descending()));
@@ -49,10 +52,17 @@ public class IndexController {
     public String article(@PathVariable("id") long id, Model model) {
 
         Article article = articleRepository.findById(id).orElse(null);
+
+
         if(article == null){
             throw new ResourceNotFoundException();
         }
+
+
+        final List<Category> categories = categoryRepository.findByBoardAndDeletedAtIsNullOrderByNameAsc(article.getBoard());
+
         model.addAttribute("article", article);
+        model.addAttribute("categories", categories);
 
         return "article";
     }
