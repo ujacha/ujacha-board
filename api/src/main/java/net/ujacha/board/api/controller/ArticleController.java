@@ -8,6 +8,7 @@ import net.ujacha.board.api.entity.Article;
 import net.ujacha.board.api.entity.Board;
 import net.ujacha.board.api.entity.Category;
 import net.ujacha.board.api.entity.Member;
+import net.ujacha.board.api.exception.BadRequestException;
 import net.ujacha.board.api.exception.ResourceNotFoundException;
 import net.ujacha.board.api.repository.ArticleRepository;
 import net.ujacha.board.api.repository.BoardRepository;
@@ -92,7 +93,7 @@ public class ArticleController {
         // check validation errors
         if(errors.hasErrors()){
             // TODO 에러 처리
-            throw new IllegalArgumentException();
+            throw new BadRequestException(errors.toString());
         }
 
         // get writer id from session
