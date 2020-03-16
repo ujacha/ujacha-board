@@ -41,6 +41,7 @@ public class Article extends CommonEntity {
     private Category category;
 
     @OneToMany(mappedBy = "article")
+    @Builder.Default
     private List<Comment> comments = new ArrayList<>();
 
     public void updateText(String text) {
