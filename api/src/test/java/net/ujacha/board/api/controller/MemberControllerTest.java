@@ -2,14 +2,18 @@ package net.ujacha.board.api.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import net.ujacha.board.api.common.Const;
+import net.ujacha.board.api.common.TestProfile;
 import net.ujacha.board.api.dto.LoginForm;
+import net.ujacha.board.api.entity.Member;
 import net.ujacha.board.api.entity.MemberRole;
+import net.ujacha.board.api.service.MemberService;
 import org.hamcrest.comparator.ComparatorMatcherBuilder;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,8 +23,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-@Transactional
+@ActiveProfiles(TestProfile.TEST)
 class MemberControllerTest {
+
+    @Autowired
+    MemberService memberService;
 
     @Autowired
     MockMvc mockMvc;
@@ -32,9 +39,16 @@ class MemberControllerTest {
     @DisplayName("로그인 성공")
     public void testLogin() throws Exception {
         // Given
+
+        String email = "admin@ujacha.net";
+        String password = "admin1234";
+        String displayName = "ADMIN";
+        Member member = Member.createMember(email, password, displayName, MemberRole.ADMIN);
+        memberService.joinMember(member);
+
         LoginForm loginForm = new LoginForm();
-        loginForm.setEmail("admin@ujacha.net");
-        loginForm.setPassword("admin1234");
+        loginForm.setEmail(email);
+        loginForm.setPassword(password);
         // When
         mockMvc.perform(post("/login")
                 .param("email", loginForm.getEmail())
@@ -45,7 +59,7 @@ class MemberControllerTest {
                 .andExpect(redirectedUrl("/"))
                 .andExpect(request().sessionAttribute("UJACHA_BOARD_LOGIN", ComparatorMatcherBuilder.<Long>usingNaturalOrdering().greaterThan(0L)))
                 .andExpect(request().sessionAttribute("UJACHA_BOARD_ROLE", MemberRole.ADMIN))
-                .andExpect(request().sessionAttribute("UJACHA_BOARD_NAME", "ADMIN"));
+                .andExpect(request().sessionAttribute("UJACHA_BOARD_NAME", displayName));
         // Then
 
     }

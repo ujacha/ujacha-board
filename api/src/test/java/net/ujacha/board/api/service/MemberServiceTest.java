@@ -1,15 +1,18 @@
 package net.ujacha.board.api.service;
 
+import net.ujacha.board.api.common.TestProfile;
 import net.ujacha.board.api.entity.Member;
 import net.ujacha.board.api.entity.MemberRole;
 import net.ujacha.board.api.repository.MemberRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
+@ActiveProfiles(TestProfile.TEST)
 class MemberServiceTest {
 
     @Autowired

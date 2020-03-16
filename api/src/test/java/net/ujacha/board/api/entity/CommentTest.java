@@ -1,14 +1,18 @@
 package net.ujacha.board.api.entity;
 
+import net.ujacha.board.api.common.TestProfile;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-@SpringBootTest
+@DataJpaTest
+@ActiveProfiles(TestProfile.TEST)
 class CommentTest {
 
     @PersistenceContext
