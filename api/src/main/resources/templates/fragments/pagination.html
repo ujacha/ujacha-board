@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pagination</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+          integrity="sha256-9mbkOfVho3ZPXfM7W8sV2SndrGDuh7wuyLjtsWeTI1Q=" crossorigin="anonymous"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
+            integrity="sha256-t8GepnyPmw9t+foMh3mKNvcorqNHamSKtKRxxpUEgFI=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div th:fragment="pagination(page)">
+    <h1 th:text="${T(net.ujacha.board.api.common.PaginationUtils).qs(param,'page', (page.getNumber() + 1))}">
+        baseUrl</h1>
+    <h1 th:text="${#request.getContextPath()}">baseUrl</h1>
+    <h1 th:text="${#request.getRequestURI()}">baseUrl</h1>
+    <h1 th:text="${#request.getRequestURL()}">baseUrl</h1>
+    <h1 th:text="${#request.getQueryString()}">baseUrl</h1>
+    <h1 th:text="${#request.getPathInfo()}">baseUrl</h1>
+    <h1 th:text="${#request.getPathTranslated()}">baseUrl</h1>
+    <h1 th:text="${#request.getPathTranslated()}">baseUrl</h1>
+    <!--/*@thymesVar id="page" type="org.springframework.data.domain.Page"*/-->
+    <div class="ui pagination menu" th:if="${page.hasContent()}">
+        <a class="item" th:if="${page.getNumber() > 1}"
+           th:href="${T(net.ujacha.board.api.common.PaginationUtils).qs(param,'page', 1)}">
+            &lt;&lt;
+        </a>
+        <a class="item" th:if="${page.hasPrevious()}"
+           th:href="${T(net.ujacha.board.api.common.PaginationUtils).qs(param, 'page', (page.getNumber() - 1))}">
+            &lt;
+        </a>
+        <a class="disabled item" th:if="${page.isFirst()}">
+            1
+        </a>
+        <a class="disabled item" th:if="${page.getNumber() > 0}" th:text="${page.getNumber() + 1}">
+            2
+        </a>
+        <a class="item" th:if="${page.hasNext()}"
+           th:href="${T(net.ujacha.board.api.common.PaginationUtils).qs(param, 'page', (page.getNumber() + 1))}">
+            &gt;
+        </a>
+    </div>
+</div>
+
+
+<div th:fragment="pagination-first">
+    <div class="ui pagination menu">
+        <a class="disabled item">
+            1
+        </a>
+        <a class="item">
+            &gt;
+        </a>
+    </div>
+</div>
+<div th:fragment="pagination-second">
+    <div class="ui pagination menu">
+        <a class="item">
+            &lt;
+        </a>
+        <a class="disabled item">
+            2
+        </a>
+        <a class="item">
+            &gt;
+        </a>
+    </div>
+</div>
+<div th:fragment="pagination-other">
+    <div class="ui pagination menu">
+        <a class="item">
+            &lt;&lt;
+        </a>
+        <a class="item">
+            &lt;
+        </a>
+        <a class="disabled item">
+            3
+        </a>
+        <a class="item">
+            &gt;
+        </a>
+    </div>
+</div>
+<div th:fragment="pagination-last">
+    <div class="ui pagination menu">
+        <a class="item">
+            &lt;&lt;
+        </a>
+        <a class="item">
+            &lt;
+        </a>
+        <a class="disabled item">
+            10
+        </a>
+    </div>
+</div>
+</body>
+</html>

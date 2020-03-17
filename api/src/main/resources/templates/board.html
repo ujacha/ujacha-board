@@ -41,23 +41,23 @@
                 </div>
             </div>
 
-<!--            <div class="ui inline dropdown">-->
-<!--                <div class="ui header text" th:text="${board.title}">-->
-<!--                    Board Name-->
-<!--                </div>-->
-<!--                <i class="dropdown icon"></i>-->
-<!--                <div class="menu">-->
-<!--                    &lt;!&ndash;                    <div class="header">Boards</div>&ndash;&gt;-->
-<!--                    <div class="item" th:each="b : ${boards}" th:attr="data-text=${b.title}">-->
-<!--                        <div class="ui header" th:text="${b.title}">-->
-<!--                            Board1-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    &lt;!&ndash;                    <a href="#" th:href="@{/board(id=${b.id})}">&ndash;&gt;-->
-<!--                    &lt;!&ndash;                        &ndash;&gt;-->
-<!--                    &lt;!&ndash;                    </a>&ndash;&gt;-->
-<!--                </div>-->
-<!--            </div>-->
+            <!--            <div class="ui inline dropdown">-->
+            <!--                <div class="ui header text" th:text="${board.title}">-->
+            <!--                    Board Name-->
+            <!--                </div>-->
+            <!--                <i class="dropdown icon"></i>-->
+            <!--                <div class="menu">-->
+            <!--                    &lt;!&ndash;                    <div class="header">Boards</div>&ndash;&gt;-->
+            <!--                    <div class="item" th:each="b : ${boards}" th:attr="data-text=${b.title}">-->
+            <!--                        <div class="ui header" th:text="${b.title}">-->
+            <!--                            Board1-->
+            <!--                        </div>-->
+            <!--                    </div>-->
+            <!--                    &lt;!&ndash;                    <a href="#" th:href="@{/board(id=${b.id})}">&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                        &ndash;&gt;-->
+            <!--                    &lt;!&ndash;                    </a>&ndash;&gt;-->
+            <!--                </div>-->
+            <!--            </div>-->
 
         </div>
         <div class="right aligned four wide column" th:replace="~{fragments/header::loginInfo}">
@@ -108,7 +108,9 @@
 
     <div>
         <div class="ui hidden divider"></div>
-        <div class="ui pagination menu" th:if="${page.hasContent()}">
+        <div th:replace="~{fragments/pagination::pagination(${page})}"
+             th:with="baseUrl=@{/board(id=${board.id}, category=${selectedCategoryId == -1 ? null : selectedCategoryId})}"></div>
+        <div class="ui pagination menu" th:if="${page.hasContent() }">
             <a class="item" href="#"
                th:href="@{/board(id=${board.id}, category=${selectedCategoryId == -1 ? null : selectedCategoryId}, page=${pagenum})}"
                th:text="${pagenum}" th:each="pagenum : ${#numbers.sequence(1,  page.getTotalPages())}">#</a>
