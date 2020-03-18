@@ -106,31 +106,13 @@
         </div>
     </div>
 
-    <div>
+    <div class="ui right aligned container"
+            th:with="baseUrl=${#request.getRequestURI()}, queryString=${#request.getQueryString()}">
         <div class="ui hidden divider"></div>
-        <div th:replace="~{fragments/pagination::pagination(${page})}"
-             th:with="baseUrl=@{/board(id=${board.id}, category=${selectedCategoryId == -1 ? null : selectedCategoryId})}"></div>
-        <div class="ui pagination menu" th:if="${page.hasContent() }">
-            <a class="item" href="#"
-               th:href="@{/board(id=${board.id}, category=${selectedCategoryId == -1 ? null : selectedCategoryId}, page=${pagenum})}"
-               th:text="${pagenum}" th:each="pagenum : ${#numbers.sequence(1,  page.getTotalPages())}">#</a>
-            <!--            <a class="active item">-->
-            <!--                1-->
-            <!--            </a>-->
-            <!--            <div class="disabled item">-->
-            <!--                ...-->
-            <!--            </div>-->
-            <!--            <a class="item">-->
-            <!--                10-->
-            <!--            </a>-->
-            <!--            <a class="item">-->
-            <!--                11-->
-            <!--            </a>-->
-            <!--            <a class="item">-->
-            <!--                12-->
-            <!--            </a>-->
+        <div th:replace="~{fragments/pagination::pagination(${page}, ${baseUrl}, ${queryString}, 'page')}">
+            Pagination
         </div>
-
+        <div class="ui hidden divider"></div>
     </div>
 
 </main>

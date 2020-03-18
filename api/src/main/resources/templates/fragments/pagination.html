@@ -16,24 +16,15 @@
 </head>
 <body>
 
-<div th:fragment="pagination(page)">
-    <h1 th:text="${T(net.ujacha.board.api.common.PaginationUtils).qs(param,'page', (page.getNumber() + 1))}">
-        baseUrl</h1>
-    <h1 th:text="${#request.getContextPath()}">baseUrl</h1>
-    <h1 th:text="${#request.getRequestURI()}">baseUrl</h1>
-    <h1 th:text="${#request.getRequestURL()}">baseUrl</h1>
-    <h1 th:text="${#request.getQueryString()}">baseUrl</h1>
-    <h1 th:text="${#request.getPathInfo()}">baseUrl</h1>
-    <h1 th:text="${#request.getPathTranslated()}">baseUrl</h1>
-    <h1 th:text="${#request.getPathTranslated()}">baseUrl</h1>
+<div th:fragment="pagination(page, baseUrl, queryString, pageKey)">
     <!--/*@thymesVar id="page" type="org.springframework.data.domain.Page"*/-->
     <div class="ui pagination menu" th:if="${page.hasContent()}">
         <a class="item" th:if="${page.getNumber() > 1}"
-           th:href="${T(net.ujacha.board.api.common.PaginationUtils).qs(param,'page', 1)}">
+           th:href="${T(net.ujacha.board.api.common.PaginationUtils).link(baseUrl,queryString,pageKey, 1)}">
             &lt;&lt;
         </a>
         <a class="item" th:if="${page.hasPrevious()}"
-           th:href="${T(net.ujacha.board.api.common.PaginationUtils).qs(param, 'page', (page.getNumber() - 1))}">
+           th:href="${T(net.ujacha.board.api.common.PaginationUtils).link(baseUrl,queryString,pageKey,((page.getNumber() + 1) - 1))}">
             &lt;
         </a>
         <a class="disabled item" th:if="${page.isFirst()}">
@@ -43,7 +34,7 @@
             2
         </a>
         <a class="item" th:if="${page.hasNext()}"
-           th:href="${T(net.ujacha.board.api.common.PaginationUtils).qs(param, 'page', (page.getNumber() + 1))}">
+           th:href="${T(net.ujacha.board.api.common.PaginationUtils).link(baseUrl,queryString,pageKey,((page.getNumber() + 1) + 1))}">
             &gt;
         </a>
     </div>

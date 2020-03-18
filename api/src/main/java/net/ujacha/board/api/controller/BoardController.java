@@ -37,7 +37,7 @@ public class BoardController {
 
         log.info("BOARD: {}, CATEGORY: {}, PAGE: {}", id, categoryId, pageNum);
 
-        final List<Board> boards = boardRepository.findAllByDeletedAtIsNullOrderByDisplayOrderAsc();
+        final List<Board> boards = boardRepository.findEnableBoards();
         final Board board = boardRepository.findById(id).orElse(null);
         if (board == null) {
             throw new ResourceNotFoundException("Not Found Board.");
@@ -49,11 +49,12 @@ public class BoardController {
         final Page<Article> pagedArticles;
 
         if (categoryId == 0) {
+            // category non assigned
 //            pagedArticles = articleRepository.findAllByCategoryIsNullAndDeletedAtIsNull(PageRequest.of(pageNum - 1, 6, Sort.by("createdAt").descending()));
-            pagedArticles = articleRepository.findByBoardAndCategoryAndDeletedAtIsNull(board, null, PageRequest.of(pageNum - 1, 6, Sort.Direction.DESC, "createdAt"));
+            pagedArticles = articleRepository.findCategoryNonAssignedArticles(board, PageRequest.of(pageNum - 1, 6, Sort.Direction.DESC, "createdAt"));
         } else if (categoryId > 0) {
             Category selectedCategory = categoryRepository.findById(categoryId).orElse(null);
-            pagedArticles = articleRepository.findByBoardAndCategoryAndDeletedAtIsNull(board, selectedCategory, PageRequest.of(pageNum - 1, 6, Sort.Direction.DESC, "createdAt"));
+            pagedArticles = articleRepository.findArticles(board, selectedCategory, PageRequest.of(pageNum - 1, 6, Sort.Direction.DESC, "createdAt"));
         } else {
             pagedArticles = articleRepository.findByBoardAndDeletedAtIsNull(board, PageRequest.of(pageNum - 1, 6, Sort.Direction.DESC, "createdAt"));
         }
