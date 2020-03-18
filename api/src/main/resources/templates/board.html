@@ -106,11 +106,23 @@
         </div>
     </div>
 
-    <div class="ui right aligned container"
-            th:with="baseUrl=${#request.getRequestURI()}, queryString=${#request.getQueryString()}">
+    <div th:with="baseUrl=${#request.getRequestURI()}, queryString=${#request.getQueryString()}">
         <div class="ui hidden divider"></div>
-        <div th:replace="~{fragments/pagination::pagination(${page}, ${baseUrl}, ${queryString}, 'page')}">
-            Pagination
+        <div class="ui grid">
+            <div class="two column row">
+                <div class="left floated column">
+                    <a class="ui primary basic button"
+                       th:if="${#session?.getAttribute('UJACHA_BOARD_LOGIN') != null ? true : false}"
+                       th:href="@{/createArticle(boardId=${board.getId()})}">
+                        Write
+                    </a>
+                </div>
+                <div class="right floated right aligned column">
+                    <div th:replace="~{fragments/pagination::pagination(${page}, ${baseUrl}, ${queryString}, 'page')}">
+                        Pagination
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="ui hidden divider"></div>
     </div>

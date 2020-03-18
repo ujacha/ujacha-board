@@ -1,23 +1,67 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Create Article</title>
+    <th:block th:replace="~{fragments/head :: head}">
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>UJACHA BOARD</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+              integrity="sha256-9mbkOfVho3ZPXfM7W8sV2SndrGDuh7wuyLjtsWeTI1Q=" crossorigin="anonymous"/>
+        <!--        <link rel="stylesheet" th:href="@{/css/site.css}">-->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+                integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
+                integrity="sha256-t8GepnyPmw9t+foMh3mKNvcorqNHamSKtKRxxpUEgFI=" crossorigin="anonymous"></script>
+    </th:block>
+
+    <style>
+        .top-pd {
+            padding-top: 1.5em;
+        }
+    </style>
+
 </head>
 <body>
+<header class="ui center aligned container top-pd">
+    <div class="ui grid">
+        <div class="four wide column">
+            <!--site logo-->
+        </div>
+        <div class="center aligned eight wide column">
+            <a class="ui huge header" href="#" th:text="${board.getTitle()}">Board Name</a>
+        </div>
+    </div>
+    <div class="ui divider"></div>
 
-<form action="/createArticle" method="post">
-    <input type="hidden" id="boardId" name="boardId" th:value="${board.getId()}" placeholder="Enter Title...">
-    <select id="categoryId" name="categoryId">
-        <option th:each="category : ${categories}" th:value="${category.getId()}" th:text="${category.getName()}">CCC</option>
-    </select>
-    <input type="text" id="title" name="title">
-    <textarea id="text" name="text"></textarea>
-    <button type="submit">Submit</button>
-</form>
+
+</header>
+<main class="ui container">
+    <form class="ui form" action="/createArticle" method="post">
+        <input type="hidden" id="boardId" name="boardId" th:value="${board.getId()}" placeholder="Enter Title...">
+        <div class="fields">
+            <div class="four wide field">
+                <select id="categoryId" name="categoryId">
+                    <option value="0">Select Category</option>
+                    <option th:each="category : ${categories}" th:value="${category.getId()}"
+                            th:text="${category.getName()}">
+                        CCC
+                    </option>
+                </select>
+            </div>
+            <div class="twelve wide field">
+                <input type="text" id="title" name="title" placeholder="Enter Title" autocomplete="off">
+            </div>
+        </div>
+        <div class="field">
+            <textarea id="text" name="text" placeholder="Enter Your Contents"></textarea>
+        </div>
+        <button class="ui primary fluid button" type="submit">Submit</button>
+    </form>
+</main>
+<footer></footer>
 
 </body>
 </html>
