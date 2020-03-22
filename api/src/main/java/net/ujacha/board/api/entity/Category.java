@@ -10,7 +10,7 @@ import javax.persistence.*;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Getter
 @EqualsAndHashCode(of = "id", callSuper = false)
-public class Category extends CommonEntity{
+public class Category extends BaseEntity {
     @Id
     @GeneratedValue
     @Column(name = "category_id")

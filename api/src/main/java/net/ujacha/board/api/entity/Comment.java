@@ -12,7 +12,7 @@ import static javax.persistence.FetchType.LAZY;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @EqualsAndHashCode(of = "id", callSuper = false)
 @Getter
-public class Comment extends CommonEntity {
+public class Comment extends BaseEntity {
     @Id
     @GeneratedValue
     @Column(name = "comment_id")

@@ -12,7 +12,7 @@ import javax.persistence.*;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @EqualsAndHashCode(of = "id", callSuper = false)
 @ToString(of = {"id", "email", "password", "salt", "displayName", "memberRole"})
-public class Member extends CommonEntity{
+public class Member extends BaseEntity {
     @Id @GeneratedValue
     @Column(name = "member_id")
     private Long id;

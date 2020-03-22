@@ -3,8 +3,6 @@ package net.ujacha.board.api.entity;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Builder
@@ -13,7 +11,7 @@ import java.util.List;
 @EqualsAndHashCode(of = "id", callSuper = false)
 @Getter
 @ToString(of = {"id", "title", "displayOrder"})
-public class Board extends CommonEntity {
+public class Board extends BaseEntity {
     @Id
     @GeneratedValue
     @Column(name = "board_id")

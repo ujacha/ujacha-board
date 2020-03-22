@@ -14,7 +14,7 @@ import java.util.List;
 @Getter
 @EqualsAndHashCode(of = "id", callSuper = false)
 
-public class Article extends CommonEntity {
+public class Article extends BaseEntity {
     @Id
     @GeneratedValue
     @Column(name = "article_id")
@@ -43,11 +43,6 @@ public class Article extends CommonEntity {
     @OneToMany(mappedBy = "article")
     @Builder.Default
     private List<Comment> comments = new ArrayList<>();
-
-    public void updateText(String text) {
-        this.text = text;
-        this.setLastModifiedAt(LocalDateTime.now());
-    }
 
     public Comment addComment(Comment comment) {
         comment.addTo(this);
