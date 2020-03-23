@@ -34,9 +34,12 @@ jobs:
         source: "api/target/*.jar"
         target: "app"
     - name: Restart Server
-      uses: garygrossgarten/github-action-ssh@v0.4.3
+      uses: appleboy/ssh-action@master
       with:
-        command: ~/bin/board.sh stop && sleep 10 && ~/bin/board.sh start
+        script: |
+          ~/bin/board.sh stop 
+          sleep 10 
+          ~/bin/board.sh start
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
